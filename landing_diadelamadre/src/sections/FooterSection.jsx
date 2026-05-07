@@ -38,16 +38,30 @@ function pad(n) {
 /**
  * StickyCTA — Barra fija inferior con oferta limitada y countdown
  */
-export function StickyCTA() {
+export function StickyCTA({ 
+  gradient = "linear-gradient(90deg, #9333ea 0%, #ec4899 100%)",
+  theme = "purple"
+}) {
   const { d, h, m, s } = useCountdown();
   const [expanded, setExpanded] = useState(false);
+
+  // Mapeo de colores para los cuadritos del contador según el tema
+  const timerColors = {
+    purple: "#ec4899",
+    pink: "#db2777",
+    turquoise: "#0891b2",
+    amber: "#ea580c"
+  };
+
+  const timerColor = timerColors[theme] || timerColors.purple;
 
   return (
     <div 
       className="sticky-cta w-full left-0 right-0" 
       style={{ 
         padding: "0",
-        background: "linear-gradient(90deg, #9333ea 0%, #ec4899 100%)",
+        background: gradient,
+        transition: "background 0.8s ease-in-out",
         minHeight: "75px",
         display: "flex",
         flexDirection: "column",
@@ -129,7 +143,10 @@ export function StickyCTA() {
             <div className="flex gap-1.5 md:gap-3 items-center justify-center">
               {[pad(d), pad(h), pad(m), pad(s)].map((val, i) => (
                 <span key={i} className="flex items-center gap-1.5">
-                  <span className="bg-pink-500 text-white font-black text-[0.9rem] md:text-xl px-2.5 py-1.5 md:px-3.5 md:py-2 rounded-xl tabular-nums shadow-lg border border-white/20 min-w-[34px] md:min-w-[46px] text-center">
+                  <span 
+                    style={{ background: timerColor, transition: "background 0.8s ease-in-out" }}
+                    className="text-white font-black text-[0.9rem] md:text-xl px-2.5 py-1.5 md:px-3.5 md:py-2 rounded-xl tabular-nums shadow-lg border border-white/20 min-w-[34px] md:min-w-[46px] text-center"
+                  >
                     {val}
                   </span>
                   {i < 3 && <span className="text-white/40 font-black text-sm md:text-lg">:</span>}

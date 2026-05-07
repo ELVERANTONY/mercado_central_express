@@ -11,6 +11,7 @@ const kit = KITS.bienestar;
 export default function HeroSection() {
   return (
     <section
+      id="hero"
       className="bg-hero"
       style={{ position: "relative", overflow: "hidden", paddingBottom: 40 }}
     >
@@ -41,50 +42,6 @@ export default function HeroSection() {
           pointerEvents: "none",
         }}
       />
-
-      {/* ── Top Banner "MCE + DÍA DE LA MADRE" ── */}
-      <FadeInUp delay={0}>
-        <div
-          style={{
-            background: "linear-gradient(90deg, #9333ea 0%, #ec4899 100%)",
-            padding: "20px 16px", // EVEN TALLER
-            textAlign: "center",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
-          }}
-        >
-          <div
-            className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-14"
-            style={{
-              color: "#fff",
-              fontWeight: 800,
-              fontSize: "0.85rem",
-              letterSpacing: "0.08em",
-            }}
-          >
-            {/* Logo + Brand */}
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <img
-                src={mceLogo}
-                alt="MCE Logo"
-                style={{ height: 26, filter: "brightness(0) invert(1)" }}
-              />
-              <span style={{ fontSize: "0.7rem", opacity: 0.95, letterSpacing: "0.15em" }}>
-                MERCADO CENTRAL EXPRESS
-              </span>
-            </div>
-
-            {/* Divider (Hidden on mobile) */}
-            <div className="hidden md:block" style={{ width: 1, height: 16, background: "rgba(255,255,255,0.3)", margin: "0 4px" }} />
-
-            {/* Campaign Name */}
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <Heart size={14} fill="white" />
-              <span>DÍA DE LA MADRE</span>
-              <Heart size={14} fill="white" />
-            </div>
-          </div>
-        </div>
-      </FadeInUp>
 
       <div style={{ padding: "24px 20px 0" }}>
         {/* ── Hero Grid: Text + Image ── */}
