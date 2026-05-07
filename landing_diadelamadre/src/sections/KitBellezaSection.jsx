@@ -2,13 +2,24 @@ import { motion } from "framer-motion";
 import { Heart, Sparkles, Shield, Snowflake, Check } from "lucide-react";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { FadeInUp, ScaleIn } from "../components/Animations";
-import { GiftBadge, BenefitItem } from "../components/UIKit";
+import { GiftBadge, BenefitItem, PriceBadge } from "../components/UIKit";
 import { KITS } from "../constants/config";
 
 const kit = KITS.belleza;
 import imgMasajeador from "../assets/product_masajeador.png";
 import imgParches from "../assets/product_caja_parches.png";
 import imgBellezaMom from "../assets/bienestar_mom.png";
+
+// Configuración de colores para el Kit Belleza (Turquesa/Cian)
+const colorConfig = {
+  primary: "#0891b2",
+  secondary: "#06b6d4",
+  text: "#164e63",
+  bgLight: "rgba(8, 145, 178, 0.12)",
+  border: "rgba(8, 145, 178, 0.25)",
+  gradient: "linear-gradient(135deg, #0891b2, #06b6d4)",
+  shadow: "rgba(8, 145, 178, 0.4)"
+};
 
 export default function KitBellezaSection() {
   return (
@@ -23,7 +34,7 @@ export default function KitBellezaSection() {
           <div style={{ textAlign: "center", marginBottom: 8 }}>
             <span
               style={{
-                background: "linear-gradient(90deg, #0891b2, #06b6d4)",
+                background: colorConfig.gradient,
                 color: "#fff",
                 fontWeight: 800,
                 fontSize: "0.75rem",
@@ -91,7 +102,7 @@ export default function KitBellezaSection() {
           <p
             style={{
               textAlign: "center",
-              color: "#0891b2",
+              color: colorConfig.primary,
               fontSize: "clamp(0.78rem, 2.2vw, 0.9rem)",
               fontWeight: 600,
               marginTop: 6,
@@ -117,7 +128,7 @@ export default function KitBellezaSection() {
                 <p
                   className="text-center md:text-left"
                   style={{
-                    color: "#4b2d63",
+                    color: colorConfig.text,
                     fontSize: "clamp(0.85rem, 2.5vw, 1rem)",
                     lineHeight: 1.55,
                     marginBottom: 16,
@@ -125,7 +136,7 @@ export default function KitBellezaSection() {
                 >
                   Porque ella merece el mejor cuidado,{" "}
                   <strong>regálale belleza</strong> para que se sienta{" "}
-                  <span style={{ color: "#0891b2", fontWeight: 700 }}>
+                  <span style={{ color: colorConfig.primary, fontWeight: 700 }}>
                     única y especial
                   </span>
                 </p>
@@ -136,13 +147,14 @@ export default function KitBellezaSection() {
                       key={i}
                       text={b}
                       icon={i === 0 ? Sparkles : i === 1 ? Shield : Snowflake}
+                      colorConfig={colorConfig}
                     />
                   ))}
                 </div>
               </div>
 
               <div className="flex justify-center md:min-w-[90px]">
-                <GiftBadge>
+                <GiftBadge colorConfig={colorConfig}>
                   <p>¡PIEL</p>
                   <p>RADIANTE</p>
                   <p>SIEMPRE!</p>
@@ -157,7 +169,7 @@ export default function KitBellezaSection() {
           <div style={{ textAlign: "center", margin: "40px 0 20px" }}>
             <span
               style={{
-                background: "linear-gradient(90deg, #06b6d4, #3b82f6)",
+                background: colorConfig.gradient,
                 color: "#fff",
                 fontWeight: 900,
                 fontSize: "1rem",
@@ -167,7 +179,7 @@ export default function KitBellezaSection() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 8,
-                boxShadow: "0 10px 25px rgba(6,182,212,0.3)"
+                boxShadow: `0 10px 25px ${colorConfig.shadow}`
               }}
             >
               PRODUCTOS CLAVE <Heart size={18} fill="white" />
@@ -175,8 +187,8 @@ export default function KitBellezaSection() {
           </div>
         </FadeInUp>
 
-        {/* Product Cards — Matching KitBienestar style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start mt-16 md:mt-24">
+        {/* Product Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start mt-32 md:mt-48">
           {/* Masajeador */}
           <ScaleIn delay={0.3}>
             <motion.div
@@ -192,7 +204,7 @@ export default function KitBellezaSection() {
                 flexDirection: "column",
                 alignItems: "center"
               }}
-              whileHover={{ y: -8, boxShadow: "0 25px 50px rgba(168,85,247,0.3)" }}
+              whileHover={{ y: -8, boxShadow: `0 25px 50px ${colorConfig.shadow}` }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="absolute -top-24 md:-top-32 left-0 right-0 flex justify-center pointer-events-none z-10">
@@ -208,7 +220,7 @@ export default function KitBellezaSection() {
               <p
                 className="font-black"
                 style={{
-                  color: "#0891b2",
+                  color: colorConfig.primary,
                   fontSize: "clamp(1.1rem, 3.2vw, 1.4rem)",
                   textTransform: "uppercase",
                   lineHeight: 1.1,
@@ -221,7 +233,7 @@ export default function KitBellezaSection() {
               <p
                 style={{
                   fontSize: "clamp(0.85rem, 2.2vw, 0.95rem)",
-                  color: "#164e63",
+                  color: colorConfig.text,
                   lineHeight: 1.5,
                   marginBottom: 16,
                   fontWeight: 500
@@ -237,7 +249,7 @@ export default function KitBellezaSection() {
                   { icon: <Check size={16} />, text: "Resultados profesionales" },
                 ].map((b, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-                    <div style={{ color: "#06b6d4" }}>{b.icon}</div>
+                    <div style={{ color: colorConfig.secondary }}>{b.icon}</div>
                     <span style={{ fontSize: "0.85rem", color: "#4b5563", fontWeight: 600 }}>{b.text}</span>
                   </div>
                 ))}
@@ -260,7 +272,7 @@ export default function KitBellezaSection() {
                 flexDirection: "column",
                 alignItems: "center"
               }}
-              whileHover={{ y: -8, boxShadow: "0 25px 50px rgba(168,85,247,0.3)" }}
+              whileHover={{ y: -8, boxShadow: `0 25px 50px ${colorConfig.shadow}` }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="absolute -top-24 md:-top-32 left-0 right-0 flex justify-center pointer-events-none z-10">
@@ -276,7 +288,7 @@ export default function KitBellezaSection() {
               <p
                 className="font-black"
                 style={{
-                  color: "#0891b2",
+                  color: colorConfig.primary,
                   fontSize: "clamp(1.1rem, 3.2vw, 1.4rem)",
                   textTransform: "uppercase",
                   lineHeight: 1.1,
@@ -289,7 +301,7 @@ export default function KitBellezaSection() {
               <p
                 style={{
                   fontSize: "clamp(0.85rem, 2.2vw, 0.95rem)",
-                  color: "#164e63",
+                  color: colorConfig.text,
                   lineHeight: 1.5,
                   marginBottom: 16,
                   fontWeight: 500
@@ -305,7 +317,7 @@ export default function KitBellezaSection() {
                   { icon: <Check size={16} />, text: "Colágeno concentrado" },
                 ].map((b, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-                    <div style={{ color: "#06b6d4" }}>{b.icon}</div>
+                    <div style={{ color: colorConfig.secondary }}>{b.icon}</div>
                     <span style={{ fontSize: "0.85rem", color: "#4b5563", fontWeight: 600 }}>{b.text}</span>
                   </div>
                 ))}
@@ -314,13 +326,13 @@ export default function KitBellezaSection() {
               <div
                 style={{
                   padding: "10px 16px",
-                  background: "rgba(6,182,212,0.12)",
+                  background: colorConfig.bgLight,
                   borderRadius: 14,
                   fontSize: "clamp(0.75rem, 2vw, 0.85rem)",
-                  color: "#0891b2",
+                  color: colorConfig.primary,
                   fontWeight: 800,
                   width: "100%",
-                  border: "1px solid rgba(6,182,212,0.25)",
+                  border: `1px solid ${colorConfig.border}`,
                   textAlign: "center"
                 }}
               >
@@ -332,15 +344,24 @@ export default function KitBellezaSection() {
 
         {/* ── Final CTA ── */}
         <FadeInUp delay={0.55}>
-          <div className="mt-16 md:mt-24 flex justify-center px-4">
+          <div className="mt-48 md:mt-72 flex justify-center px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-32 items-center max-w-[680px] w-full">
               {/* Gift box + image */}
               <div className="flex justify-center">
-                <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-[32px] p-6 border-2 border-purple-200/50 w-full max-w-[320px] relative shadow-xl">
+                <div 
+                  className="rounded-[32px] p-6 w-full max-w-[320px] relative shadow-xl"
+                  style={{ 
+                    background: `linear-gradient(to bottom right, #fff, ${colorConfig.bgLight})`,
+                    border: `2px solid ${colorConfig.border}` 
+                  }}
+                >
                   <div className="relative mb-4 h-[240px] md:h-[280px]">
                     <img src={imgBellezaMom} alt="Mamá feliz" className="w-full h-full object-contain absolute bottom-0 left-0 z-10 mix-blend-multiply" />
                   </div>
-                  <p className="text-xs md:text-sm font-black text-purple-600 leading-tight uppercase tracking-wider text-center">
+                  <p 
+                    className="text-xs md:text-sm font-black leading-tight uppercase tracking-wider text-center"
+                    style={{ color: colorConfig.primary }}
+                  >
                     EL REGALO QUE ELLA MERECE ❤️
                   </p>
                 </div>
@@ -348,16 +369,19 @@ export default function KitBellezaSection() {
 
               {/* Offer + CTA */}
               <div className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
-                <div className="bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl p-5 border border-orange-200/30 w-full max-w-[300px]">
-                  <p className="text-purple-900 font-extrabold text-lg mb-1">¡OFERTA LIMITADA!</p>
-                  <p className="text-purple-800 text-sm opacity-90">Hazla feliz hoy, sorprenderla es fácil ❤️</p>
+                <div 
+                  className="rounded-2xl p-5 border w-full max-w-[300px]"
+                  style={{ 
+                    background: `linear-gradient(to bottom right, #fff, ${colorConfig.bgLight})`,
+                    borderColor: colorConfig.border 
+                  }}
+                >
+                  <p style={{ color: colorConfig.text, fontWeight: 800, fontSize: "1.125rem", marginBottom: 4 }}>¡OFERTA LIMITADA!</p>
+                  <p style={{ color: colorConfig.primary, fontSize: "0.875rem", fontWeight: 600, opacity: 0.9 }}>Hazla feliz hoy, sorprenderla es fácil ❤️</p>
                 </div>
 
                 <div className="flex flex-col gap-4 w-full max-w-[300px]">
-                  <div className="price-badge-gold py-4 px-6">
-                    <p className="text-amber-900 text-xs font-bold uppercase tracking-widest mb-1">POR SOLO</p>
-                    <p className="text-black text-5xl font-black leading-none">{kit.precio}</p>
-                  </div>
+                  <PriceBadge precio={kit.precio} colorConfig={colorConfig} />
                   <WhatsAppButton message={kit.whatsappMessage} label="PEDIR AHORA" size="lg" pulse />
                 </div>
               </div>
@@ -371,7 +395,7 @@ export default function KitBellezaSection() {
             style={{
               textAlign: "center",
               fontSize: "0.7rem",
-              color: "#0891b2",
+              color: colorConfig.primary,
               marginTop: 14,
               fontStyle: "italic",
               opacity: 0.8,

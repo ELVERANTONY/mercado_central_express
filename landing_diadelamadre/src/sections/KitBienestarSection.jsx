@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { Heart, Sparkles, Shield, Eye } from "lucide-react";
+import { Heart, Sparkles, Shield } from "lucide-react";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { FadeInUp, ScaleIn } from "../components/Animations";
-import { GiftBadge, BenefitItem, CheckItem } from "../components/UIKit";
+import { GiftBadge, BenefitItem, PriceBadge } from "../components/UIKit";
 import { KITS } from "../constants/config";
 
 const kit = KITS.bienestar;
@@ -10,11 +10,20 @@ const kit = KITS.bienestar;
 import imgCepillo from "../assets/product_cepillo-5.png";
 import imgPlancha from "../assets/product_cepillo_miniplancha_solo.png";
 import imgParches from "../assets/product_dos_parches.png";
+import imgCabelloMom from "../assets/cabello_mom.png";
 
 const productImages = [imgCepillo, imgPlancha, imgParches];
-const PRODUCT_ICONS_2 = ["🔋", "❄️"];
 
-import imgCabelloMom from "../assets/cabello_mom.png";
+// Configuración de colores para el Kit Bienestar (Rosa/Fucsia)
+const colorConfig = {
+  primary: "#db2777",
+  secondary: "#ec4899",
+  text: "#4b2d63",
+  bgLight: "rgba(219, 39, 119, 0.12)",
+  border: "rgba(219, 39, 119, 0.25)",
+  gradient: "linear-gradient(135deg, #db2777, #ec4899)",
+  shadow: "rgba(219, 39, 119, 0.4)"
+};
 
 export default function KitBienestarSection() {
   return (
@@ -33,7 +42,7 @@ export default function KitBienestarSection() {
           width: 300,
           height: 300,
           background:
-            "radial-gradient(circle, rgba(236,72,153,0.1) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(219,39,119,0.1) 0%, transparent 70%)",
           borderRadius: "50%",
           pointerEvents: "none",
         }}
@@ -45,7 +54,7 @@ export default function KitBienestarSection() {
           <div style={{ textAlign: "center", marginBottom: 8 }}>
             <span
               style={{
-                background: "linear-gradient(90deg, #db2777, #ec4899)",
+                background: colorConfig.gradient,
                 color: "#fff",
                 fontWeight: 800,
                 fontSize: "0.75rem",
@@ -76,7 +85,7 @@ export default function KitBienestarSection() {
           <p
             className="font-dancing"
             style={{
-              background: "linear-gradient(135deg, #ec4899, #be185d)",
+              background: "linear-gradient(135deg, #db2777, #be185d)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -100,7 +109,7 @@ export default function KitBienestarSection() {
             <span
               className="font-dancing"
               style={{
-                background: "linear-gradient(135deg, #e11d48, #f59e0b)",
+                background: "linear-gradient(135deg, #db2777, #f59e0b)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -113,7 +122,7 @@ export default function KitBienestarSection() {
           <p
             style={{
               textAlign: "center",
-              color: "#db2777",
+              color: colorConfig.primary,
               fontSize: "clamp(0.78rem, 2.2vw, 0.9rem)",
               fontWeight: 600,
               marginTop: 6,
@@ -134,15 +143,12 @@ export default function KitBienestarSection() {
               position: "relative",
             }}
           >
-            {/* Grid: Text + Gift Badge */}
-            <div
-              className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center text-center md:text-left"
-            >
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center text-center md:text-left">
               <div className="flex flex-col items-center md:items-start">
                 <p
                   className="text-center md:text-left"
                   style={{
-                    color: "#4b2d63",
+                    color: colorConfig.text,
                     fontSize: "clamp(0.85rem, 2.5vw, 1rem)",
                     lineHeight: 1.55,
                     marginBottom: 16,
@@ -150,7 +156,7 @@ export default function KitBienestarSection() {
                 >
                   Porque ella lo da todo,{" "}
                   <strong>regálale lo mejor</strong> para que se sienta{" "}
-                  <span style={{ color: "#ec4899", fontWeight: 700 }}>
+                  <span style={{ color: colorConfig.primary, fontWeight: 700 }}>
                     única y especial
                   </span>
                 </p>
@@ -161,13 +167,14 @@ export default function KitBienestarSection() {
                       key={i}
                       text={b}
                       icon={i === 0 ? Sparkles : i === 1 ? Heart : Shield}
+                      colorConfig={colorConfig}
                     />
                   ))}
                 </div>
               </div>
 
               <div className="flex justify-center md:min-w-[90px]">
-                <GiftBadge>
+                <GiftBadge colorConfig={colorConfig}>
                   <p>¡EL LOOK</p>
                   <p>QUE ELLA</p>
                   <p>MERECE!</p>
@@ -182,7 +189,7 @@ export default function KitBienestarSection() {
           <div style={{ textAlign: "center", margin: "28px 0 16px" }}>
             <span
               style={{
-                background: "linear-gradient(90deg, #a855f7, #ec4899)",
+                background: colorConfig.gradient,
                 color: "#fff",
                 fontWeight: 800,
                 fontSize: "0.85rem",
@@ -199,13 +206,13 @@ export default function KitBienestarSection() {
           </div>
         </FadeInUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14 items-start mt-16 md:mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14 items-start mt-32 md:mt-48">
           {kit.productos.map((p, i) => (
             <ScaleIn key={i} delay={0.3 + i * 0.1}>
               <motion.div
                 className="glass-card w-full"
                 style={{ 
-                  padding: "140px 20px 24px", // INCREASED TOP PADDING
+                  padding: "140px 20px 24px", 
                   textAlign: "center", 
                   height: "100%", 
                   position: "relative",
@@ -215,10 +222,9 @@ export default function KitBienestarSection() {
                   flexDirection: "column",
                   alignItems: "center"
                 }}
-                whileHover={{ y: -8, boxShadow: "0 25px 50px rgba(168,85,247,0.3)" }}
+                whileHover={{ y: -8, boxShadow: `0 25px 50px ${colorConfig.shadow}` }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                {/* Floating Product Image - LARGER and POPPING OUT */}
                 <div className="absolute -top-24 md:-top-32 left-0 right-0 flex justify-center pointer-events-none z-10">
                   <motion.img 
                     src={productImages[i]} 
@@ -232,7 +238,7 @@ export default function KitBienestarSection() {
                 <p
                   className="font-black"
                   style={{
-                    color: "#ec4899",
+                    color: colorConfig.primary,
                     fontSize: "clamp(1rem, 2.8vw, 1.2rem)",
                     textTransform: "uppercase",
                     lineHeight: 1.2,
@@ -245,7 +251,7 @@ export default function KitBienestarSection() {
                 <p
                   style={{
                     fontSize: "clamp(0.85rem, 2.2vw, 0.95rem)",
-                    color: "#6b21a8",
+                    color: "#6b1a3e", // Darker version of primary for readability
                     lineHeight: 1.5,
                     marginBottom: 16,
                     fontWeight: 500
@@ -257,13 +263,13 @@ export default function KitBienestarSection() {
                   style={{
                     marginTop: "auto",
                     padding: "10px 16px",
-                    background: "rgba(168,85,247,0.12)",
+                    background: colorConfig.bgLight,
                     borderRadius: 14,
                     fontSize: "clamp(0.75rem, 2vw, 0.85rem)",
-                    color: "#7c3aed",
+                    color: colorConfig.primary,
                     fontWeight: 800,
                     width: "100%",
-                    border: "1px solid rgba(168,85,247,0.25)"
+                    border: `1px solid ${colorConfig.border}`
                   }}
                 >
                   {p.extra}
@@ -275,15 +281,24 @@ export default function KitBienestarSection() {
 
         {/* ── Final CTA ── */}
         <FadeInUp delay={0.55}>
-          <div className="mt-16 md:mt-24 flex justify-center px-4">
+        <div className="mt-48 md:mt-72 flex justify-center px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-32 items-center max-w-[680px] w-full">
               {/* Gift box + image */}
               <div className="flex justify-center">
-                <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-[32px] p-6 border-2 border-purple-200/50 w-full max-w-[320px] relative shadow-xl">
+                <div 
+                  className="rounded-[32px] p-6 w-full max-w-[320px] relative shadow-xl"
+                  style={{ 
+                    background: `linear-gradient(to bottom right, #fff, ${colorConfig.bgLight})`,
+                    border: `2px solid ${colorConfig.border}` 
+                  }}
+                >
                   <div className="relative mb-4 h-[240px] md:h-[280px]">
                     <img src={imgCabelloMom} alt="Mamá feliz" className="w-full h-full object-contain absolute bottom-0 left-0 z-10 mix-blend-multiply" />
                   </div>
-                  <p className="text-xs md:text-sm font-black text-purple-600 leading-tight uppercase tracking-wider text-center">
+                  <p 
+                    className="text-xs md:text-sm font-black leading-tight uppercase tracking-wider text-center"
+                    style={{ color: colorConfig.primary }}
+                  >
                     EL REGALO QUE ELLA MERECE ❤️
                   </p>
                 </div>
@@ -291,16 +306,19 @@ export default function KitBienestarSection() {
 
               {/* Offer + CTA */}
               <div className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
-                <div className="bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl p-5 border border-orange-200/30 w-full max-w-[300px]">
-                  <p className="text-purple-900 font-extrabold text-lg mb-1">¡OFERTA LIMITADA!</p>
-                  <p className="text-purple-800 text-sm opacity-90">Hazla feliz hoy, sorprenderla es fácil ❤️</p>
+                <div 
+                  className="rounded-2xl p-5 border w-full max-w-[300px]"
+                  style={{ 
+                    background: `linear-gradient(to bottom right, #fff, ${colorConfig.bgLight})`,
+                    borderColor: colorConfig.border 
+                  }}
+                >
+                  <p style={{ color: colorConfig.text, fontWeight: 800, fontSize: "1.125rem", marginBottom: 4 }}>¡OFERTA LIMITADA!</p>
+                  <p style={{ color: colorConfig.primary, fontSize: "0.875rem", fontWeight: 600, opacity: 0.9 }}>Hazla feliz hoy, sorprenderla es fácil ❤️</p>
                 </div>
 
                 <div className="flex flex-col gap-4 w-full max-w-[300px]">
-                  <div className="price-badge-gold py-4 px-6">
-                    <p className="text-amber-900 text-xs font-bold uppercase tracking-widest mb-1">POR SOLO</p>
-                    <p className="text-black text-5xl font-black leading-none">{kit.precio}</p>
-                  </div>
+                  <PriceBadge precio={kit.precio} colorConfig={colorConfig} />
                   <WhatsAppButton message={kit.whatsappMessage} label="PEDIR AHORA" size="lg" pulse />
                 </div>
               </div>

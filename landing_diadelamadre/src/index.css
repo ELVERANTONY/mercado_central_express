@@ -150,11 +150,11 @@ body {
 
 /* ─── Price Badge ─────────────────────────────────────────── */
 .price-badge {
-  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  background: var(--kit-gradient, linear-gradient(135deg, #7c3aed, #a855f7));
   border-radius: 20px;
   padding: 20px 32px;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 8px 24px var(--kit-shadow, rgba(124, 58, 237, 0.4));
   position: relative;
   overflow: hidden;
 }
@@ -180,14 +180,14 @@ body {
 
 /* ─── Badge Gift ─────────────────────────────────────────── */
 .badge-gift {
-  background: linear-gradient(135deg, #9333ea, #c084fc);
+  background: var(--kit-gradient, linear-gradient(135deg, #9333ea, #c084fc));
   color: white;
   border-radius: 16px;
   padding: 12px 16px;
   text-align: center;
   font-weight: 800;
   font-size: 0.85rem;
-  box-shadow: 0 4px 16px rgba(147, 51, 234, 0.4);
+  box-shadow: 0 4px 16px var(--kit-shadow, rgba(147, 51, 234, 0.4));
   line-height: 1.3;
 }
 
@@ -242,13 +242,13 @@ body {
 .benefit-icon {
   width: 36px;
   height: 36px;
-  background: linear-gradient(135deg, #fce7f3, #ede9fe);
+  background: var(--kit-bg-light, linear-gradient(135deg, #fce7f3, #ede9fe));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 2px solid rgba(168, 85, 247, 0.2);
+  border: 2px solid var(--kit-border, rgba(168, 85, 247, 0.2));
 }
 
 /* ─── Floaters / Decorative Dots ─────────────────────────── */
@@ -281,16 +281,16 @@ body {
 .combo-plus {
   width: 56px;
   height: 56px;
-  background: linear-gradient(135deg, #fce7f3, #ede9fe);
-  border: 3px solid #ec4899;
+  background: var(--kit-bg-light, linear-gradient(135deg, #fce7f3, #ede9fe));
+  border: 3px solid var(--kit-primary, #ec4899);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.75rem;
   font-weight: 900;
-  color: #9333ea;
-  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.3);
+  color: var(--kit-primary, #9333ea);
+  box-shadow: 0 4px 16px var(--kit-shadow, rgba(236, 72, 153, 0.3));
   flex-shrink: 0;
 }
 

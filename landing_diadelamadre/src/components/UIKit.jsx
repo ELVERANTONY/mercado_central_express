@@ -4,11 +4,18 @@ import { CheckCircle2 } from "lucide-react";
 /**
  * PriceBadge — muestra el precio especial con sello visual
  */
-export function PriceBadge({ precio, variant = "purple" }) {
+export function PriceBadge({ precio, variant = "purple", colorConfig = {} }) {
   const isGold = variant === "gold";
+  const styles = {
+    "--kit-gradient": colorConfig.gradient,
+    "--kit-shadow": colorConfig.shadow,
+    ...colorConfig.vars
+  };
+  
   return (
     <motion.div
       className={isGold ? "price-badge-gold" : "price-badge"}
+      style={styles}
       whileHover={{ scale: 1.04 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
@@ -53,10 +60,16 @@ export function PriceBadge({ precio, variant = "purple" }) {
 /**
  * GiftBadge — "El regalo que ella merece"
  */
-export function GiftBadge({ children }) {
+export function GiftBadge({ children, colorConfig = {} }) {
+  const styles = {
+    "--kit-gradient": colorConfig.gradient,
+    "--kit-shadow": colorConfig.shadow,
+  };
+  
   return (
     <motion.div
       className="badge-gift"
+      style={styles}
       animate={{ rotate: [0, -2, 2, -1, 1, 0] }}
       transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
     >
@@ -78,23 +91,30 @@ export function GiftBadge({ children }) {
 /**
  * BenefitItem — ítem de beneficio con ícono circular
  */
-export function BenefitItem({ text, icon: Icon, center = false }) {
+export function BenefitItem({ text, icon: Icon, center = false, colorConfig = {} }) {
+  const primaryColor = colorConfig.primary || "#9333ea";
+  const textColor = colorConfig.text || "#4b2d63";
+  const styles = {
+    "--kit-bg-light": colorConfig.bgLight,
+    "--kit-border": colorConfig.border,
+  };
+
   return (
     <div 
       className={`flex items-start gap-4 mb-4 ${center ? 'justify-center text-center' : 'justify-start text-left'}`}
-      style={{ width: '100%' }}
+      style={{ width: '100%', ...styles }}
     >
       <div className="benefit-icon shrink-0">
         {Icon ? (
-          <Icon size={18} color="#9333ea" strokeWidth={2.5} />
+          <Icon size={18} color={primaryColor} strokeWidth={2.5} />
         ) : (
-          <CheckCircle2 size={18} color="#9333ea" strokeWidth={2.5} />
+          <CheckCircle2 size={18} color={primaryColor} strokeWidth={2.5} />
         )}
       </div>
       <p 
         style={{ 
           fontSize: "clamp(0.88rem, 2.8vw, 1.05rem)", 
-          color: "#4b2d63", 
+          color: textColor, 
           lineHeight: 1.4, 
           fontWeight: 600,
           marginTop: 2

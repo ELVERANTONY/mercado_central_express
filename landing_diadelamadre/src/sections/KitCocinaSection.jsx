@@ -1,14 +1,25 @@
 import { motion } from "framer-motion";
-import { Heart, CheckCircle2, Shield, Star, Zap, ThumbsUp, Sparkles, Snowflake } from "lucide-react";
+import { Heart, CheckCircle2, Star, Zap, ThumbsUp } from "lucide-react";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { FadeInUp, ScaleIn } from "../components/Animations";
-import { GiftBadge, BenefitItem } from "../components/UIKit";
+import { GiftBadge, BenefitItem, PriceBadge } from "../components/UIKit";
 import { KITS } from "../constants/config";
 import imgProcesadora from "../assets/product_procesador_electrico.png";
 import imgMolino from "../assets/product_molino_electrico.png";
 import imgMomCocina from "../assets/cocina_mom.png";
 
 const kit = KITS.cocina;
+
+// Configuración de colores para el Combo Cocina (Ámbar/Naranja)
+const colorConfig = {
+  primary: "#d97706",
+  secondary: "#fbbf24",
+  text: "#451a03",
+  bgLight: "rgba(217, 119, 6, 0.12)",
+  border: "rgba(217, 119, 6, 0.25)",
+  gradient: "linear-gradient(135deg, #d97706, #fbbf24)",
+  shadow: "rgba(217, 119, 6, 0.4)"
+};
 
 export default function KitCocinaSection() {
   return (
@@ -27,7 +38,7 @@ export default function KitCocinaSection() {
           <div style={{ textAlign: "center", marginBottom: 8 }}>
             <span
               style={{
-                background: "linear-gradient(90deg, #d97706, #fbbf24)",
+                background: colorConfig.gradient,
                 color: "#fff",
                 fontWeight: 800,
                 fontSize: "0.75rem",
@@ -93,7 +104,7 @@ export default function KitCocinaSection() {
           <p
             style={{
               textAlign: "center",
-              color: "#d97706",
+              color: colorConfig.primary,
               fontSize: "clamp(0.78rem, 2.2vw, 0.9rem)",
               fontWeight: 600,
               marginTop: 6,
@@ -104,7 +115,7 @@ export default function KitCocinaSection() {
           </p>
         </FadeInUp>
 
-        {/* Hero Card - Matches KitBelleza */}
+        {/* Hero Card */}
         <FadeInUp delay={0.15}>
           <div
             className="glass-card-dark"
@@ -127,20 +138,20 @@ export default function KitCocinaSection() {
                 >
                   Porque ella merece lo mejor en su cocina,{" "}
                   <strong>regálale potencia</strong> para que sus preparaciones sean{" "}
-                  <span style={{ color: "#d97706", fontWeight: 700 }}>
+                  <span style={{ color: colorConfig.primary, fontWeight: 700 }}>
                     más fáciles y rápidas
                   </span>
                 </p>
 
                 <div className="space-y-1">
-                  <BenefitItem text="Ahorra tiempo en cada comida" icon={Zap} />
-                  <BenefitItem text="Resultados profesionales en casa" icon={Star} />
-                  <BenefitItem text="Fácil de usar y de limpiar" icon={ThumbsUp} />
+                  <BenefitItem text="Ahorra tiempo en cada comida" icon={Zap} colorConfig={colorConfig} />
+                  <BenefitItem text="Resultados profesionales en casa" icon={Star} colorConfig={colorConfig} />
+                  <BenefitItem text="Fácil de usar y de limpiar" icon={ThumbsUp} colorConfig={colorConfig} />
                 </div>
               </div>
 
               <div className="flex justify-center md:min-w-[90px]">
-                <GiftBadge>
+                <GiftBadge colorConfig={colorConfig}>
                   <p>¡EL CHEF</p>
                   <p>QUE ELLA</p>
                   <p>MERECE!</p>
@@ -155,7 +166,7 @@ export default function KitCocinaSection() {
           <div style={{ textAlign: "center", margin: "40px 0 20px" }}>
             <span
               style={{
-                background: "linear-gradient(90deg, #f59e0b, #ea580c)",
+                background: colorConfig.gradient,
                 color: "#fff",
                 fontWeight: 900,
                 fontSize: "1rem",
@@ -165,7 +176,7 @@ export default function KitCocinaSection() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 8,
-                boxShadow: "0 10px 25px rgba(245,158,11,0.3)"
+                boxShadow: `0 10px 25px ${colorConfig.shadow}`
               }}
             >
               2 PRODUCTOS CLAVE <Heart size={18} fill="white" />
@@ -173,7 +184,7 @@ export default function KitCocinaSection() {
           </div>
         </FadeInUp>
 
-        {/* Product Cards — Exact Copy of KitBelleza style */}
+        {/* Product Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start mt-16 md:mt-24">
           {/* Procesadora */}
           <ScaleIn delay={0.3}>
@@ -190,7 +201,7 @@ export default function KitCocinaSection() {
                 flexDirection: "column",
                 alignItems: "center"
               }}
-              whileHover={{ y: -8, boxShadow: "0 25px 50px rgba(168,85,247,0.3)" }}
+              whileHover={{ y: -8, boxShadow: `0 25px 50px ${colorConfig.shadow}` }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="absolute -top-24 md:-top-32 left-0 right-0 flex justify-center pointer-events-none z-10">
@@ -206,7 +217,7 @@ export default function KitCocinaSection() {
               <p
                 className="font-black"
                 style={{
-                  color: "#92400e",
+                  color: colorConfig.primary,
                   fontSize: "clamp(1rem, 2.8vw, 1.2rem)",
                   textTransform: "uppercase",
                   lineHeight: 1.1,
@@ -219,7 +230,7 @@ export default function KitCocinaSection() {
               <div style={{ alignSelf: "stretch", marginTop: 10, marginBottom: 20 }}>
                 {kit.procesadora.specs.slice(0, 4).map((s, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
-                    <div style={{ color: "#f59e0b" }}><CheckCircle2 size={16} /></div>
+                    <div style={{ color: colorConfig.primary }}><CheckCircle2 size={16} /></div>
                     <span style={{ fontSize: "0.82rem", color: "#4b5563", fontWeight: 600, textAlign: "left" }}>{s}</span>
                   </div>
                 ))}
@@ -229,16 +240,16 @@ export default function KitCocinaSection() {
                 <div
                   style={{
                     padding: "10px 16px",
-                    background: "rgba(245,158,11,0.12)",
+                    background: colorConfig.bgLight,
                     borderRadius: 14,
                     fontSize: "0.75rem",
-                    color: "#92400e",
+                    color: colorConfig.primary,
                     fontWeight: 800,
                     width: "100%",
-                    border: "1px solid rgba(245,158,11,0.25)",
+                    border: `1px solid ${colorConfig.border}`,
                   }}
                 >
-                  Perfecta para tamales, humitas, moler carnes, semillas y verduras (crudas o cocidas)🥩
+                  Perfecta para tamales, humitas, moler carnes, semillas y verduras🥩
                 </div>
               </div>
             </motion.div>
@@ -259,7 +270,7 @@ export default function KitCocinaSection() {
                 flexDirection: "column",
                 alignItems: "center"
               }}
-              whileHover={{ y: -8, boxShadow: "0 25px 50px rgba(168,85,247,0.3)" }}
+              whileHover={{ y: -8, boxShadow: `0 25px 50px ${colorConfig.shadow}` }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="absolute -top-24 md:-top-32 left-0 right-0 flex justify-center pointer-events-none z-10">
@@ -275,7 +286,7 @@ export default function KitCocinaSection() {
               <p
                 className="font-black"
                 style={{
-                  color: "#92400e",
+                  color: colorConfig.primary,
                   fontSize: "clamp(1rem, 2.8vw, 1.2rem)",
                   textTransform: "uppercase",
                   lineHeight: 1.1,
@@ -288,7 +299,7 @@ export default function KitCocinaSection() {
               <div style={{ alignSelf: "stretch", marginTop: 10, marginBottom: 20 }}>
                 {kit.molino.specs.slice(0, 4).map((s, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
-                    <div style={{ color: "#f59e0b" }}><CheckCircle2 size={16} /></div>
+                    <div style={{ color: colorConfig.primary }}><CheckCircle2 size={16} /></div>
                     <span style={{ fontSize: "0.82rem", color: "#4b5563", fontWeight: 600, textAlign: "left" }}>{s}</span>
                   </div>
                 ))}
@@ -298,13 +309,13 @@ export default function KitCocinaSection() {
                 <div
                   style={{
                     padding: "10px 16px",
-                    background: "rgba(245,158,11,0.12)",
+                    background: colorConfig.bgLight,
                     borderRadius: 14,
                     fontSize: "0.75rem",
-                    color: "#92400e",
+                    color: colorConfig.primary,
                     fontWeight: 800,
                     width: "100%",
-                    border: "1px solid rgba(245,158,11,0.25)",
+                    border: `1px solid ${colorConfig.border}`,
                   }}
                 >
                   Ideal para granos y semillas secos🌾
@@ -314,61 +325,73 @@ export default function KitCocinaSection() {
           </ScaleIn>
         </div>
 
-        {/* Aliados Indispensables — Single Glass Bar (No more crowded separate cards) */}
+        {/* Aliados Indispensables */}
         <FadeInUp delay={0.5}>
           <div style={{ marginTop: 80, marginBottom: 40 }}>
             <div className="glass-card" style={{ padding: "20px 32px", borderRadius: 30 }}>
-              <p className="text-center font-black text-amber-900 text-[0.7rem] uppercase tracking-widest mb-6 opacity-60">❤️ DOS ALIADOS INDISPENSABLES ❤️</p>
+              <p 
+                className="text-center font-black text-[0.7rem] uppercase tracking-widest mb-6 opacity-70"
+                style={{ color: colorConfig.primary }}
+              >
+                ❤️ DOS ALIADOS INDISPENSABLES ❤️
+              </p>
               <div className="flex flex-wrap justify-center gap-12 md:gap-20">
-                <div className="flex flex-col items-center gap-2">
-                  <span className="text-3xl bg-white/40 p-3 rounded-2xl">🥩</span>
-                  <p className="text-[0.65rem] font-bold text-amber-900 uppercase">PICA CARNES</p>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <span className="text-3xl bg-white/40 p-3 rounded-2xl">🥗</span>
-                  <p className="text-[0.65rem] font-bold text-amber-900 uppercase">MEZCLAS</p>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <span className="text-3xl bg-white/40 p-3 rounded-2xl">🌾</span>
-                  <p className="text-[0.65rem] font-bold text-amber-900 uppercase">GRANOS</p>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <span className="text-3xl bg-white/40 p-3 rounded-2xl">🌿</span>
-                  <p className="text-[0.65rem] font-bold text-amber-900 uppercase">ESPECIAS</p>
-                </div>
+                {[
+                  { emoji: "🥩", label: "PICA CARNES" },
+                  { emoji: "🥗", label: "MEZCLAS" },
+                  { emoji: "🌾", label: "GRANOS" },
+                  { emoji: "🌿", label: "ESPECIAS" },
+                ].map((item, i) => (
+                  <div key={i} className="flex flex-col items-center gap-2">
+                    <span className="text-3xl bg-white/40 p-3 rounded-2xl shadow-sm">{item.emoji}</span>
+                    <p className="text-[0.65rem] font-bold uppercase" style={{ color: colorConfig.primary }}>{item.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </FadeInUp>
 
-        {/* Final Offer — Exact copy of KitBelleza pricing alignment */}
+        {/* Final Offer */}
         <FadeInUp delay={0.6}>
           <div className="mt-20 flex justify-center px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-32 items-center max-w-[680px] w-full">
               {/* Gift box + image */}
               <div className="flex justify-center">
-                <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-[32px] p-6 border-2 border-purple-200/50 w-full max-w-[320px] relative shadow-xl">
+                <div 
+                  className="rounded-[32px] p-6 w-full max-w-[320px] relative shadow-xl"
+                  style={{ 
+                    background: `linear-gradient(to bottom right, #fff, ${colorConfig.bgLight})`,
+                    border: `2px solid ${colorConfig.border}` 
+                  }}
+                >
                   <div className="relative mb-4 h-[240px] md:h-[280px]">
                     <img src={imgMomCocina} alt="Mamá en la cocina" className="w-full h-full object-contain absolute bottom-0 left-0 z-10 mix-blend-multiply" />
                   </div>
-                  <p className="text-xs md:text-sm font-black text-purple-600 leading-tight uppercase tracking-wider text-center">
+                  <p 
+                    className="text-xs md:text-sm font-black leading-tight uppercase tracking-wider text-center"
+                    style={{ color: colorConfig.primary }}
+                  >
                     EL REGALO QUE ELLA MERECE ❤️
                   </p>
                 </div>
               </div>
 
-              {/* Offer + CTA — PERFECTLY CENTERED & BALANCED */}
+              {/* Offer + CTA */}
               <div className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
-                <div className="bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl p-5 border border-orange-200/30 w-full max-w-[300px]">
-                  <p className="text-purple-900 font-extrabold text-lg mb-1">¡OFERTA LIMITADA!</p>
-                  <p className="text-purple-800 text-sm opacity-90">Hazla feliz hoy, sorprenderla es fácil ❤️</p>
+                <div 
+                  className="rounded-2xl p-5 border w-full max-w-[300px]"
+                  style={{ 
+                    background: `linear-gradient(to bottom right, #fff, ${colorConfig.bgLight})`,
+                    borderColor: colorConfig.border 
+                  }}
+                >
+                  <p style={{ color: colorConfig.text, fontWeight: 800, fontSize: "1.125rem", marginBottom: 4 }}>¡OFERTA LIMITADA!</p>
+                  <p style={{ color: colorConfig.primary, fontSize: "0.875rem", fontWeight: 600, opacity: 0.9 }}>Hazla feliz hoy, sorprenderla es fácil ❤️</p>
                 </div>
 
-                <div className="flex flex-col gap-4 w-full max-w-[260px]">
-                  <div className="price-badge-gold py-4 px-6">
-                    <p className="text-amber-900 text-xs font-bold uppercase tracking-widest mb-1">POR SOLO</p>
-                    <p className="text-black text-5xl font-black leading-none">{kit.precio}</p>
-                  </div>
+                <div className="flex flex-col gap-4 w-full max-w-[300px]">
+                  <PriceBadge precio={kit.precio} colorConfig={colorConfig} />
                   <WhatsAppButton message={kit.whatsappMessage} label="PEDIR AHORA" size="lg" pulse />
                 </div>
               </div>
