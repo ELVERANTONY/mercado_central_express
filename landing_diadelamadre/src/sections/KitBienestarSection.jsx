@@ -45,7 +45,7 @@ export default function KitBienestarSection() {
           <div style={{ textAlign: "center", marginBottom: 8 }}>
             <span
               style={{
-                background: "linear-gradient(90deg, #9333ea, #ec4899)",
+                background: "linear-gradient(90deg, #db2777, #ec4899)",
                 color: "#fff",
                 fontWeight: 800,
                 fontSize: "0.75rem",
@@ -62,7 +62,7 @@ export default function KitBienestarSection() {
         <FadeInUp delay={0.1}>
           <p
             style={{
-              color: "#6b21a8",
+              color: "#9f1239",
               fontWeight: 800,
               fontSize: "clamp(1.6rem, 5vw, 2.4rem)",
               textAlign: "center",
@@ -89,7 +89,7 @@ export default function KitBienestarSection() {
           </p>
           <p
             style={{
-              color: "#6b21a8",
+              color: "#be123c",
               fontWeight: 800,
               fontSize: "clamp(1rem, 3.5vw, 1.5rem)",
               textAlign: "center",
@@ -100,7 +100,7 @@ export default function KitBienestarSection() {
             <span
               className="font-dancing"
               style={{
-                background: "linear-gradient(135deg, #ec4899, #f59e0b)",
+                background: "linear-gradient(135deg, #e11d48, #f59e0b)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -113,7 +113,7 @@ export default function KitBienestarSection() {
           <p
             style={{
               textAlign: "center",
-              color: "#9333ea",
+              color: "#db2777",
               fontSize: "clamp(0.78rem, 2.2vw, 0.9rem)",
               fontWeight: 600,
               marginTop: 6,

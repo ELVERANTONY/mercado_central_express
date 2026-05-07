@@ -23,7 +23,7 @@ export default function KitBellezaSection() {
           <div style={{ textAlign: "center", marginBottom: 8 }}>
             <span
               style={{
-                background: "linear-gradient(90deg, #9333ea, #ec4899)",
+                background: "linear-gradient(90deg, #0891b2, #06b6d4)",
                 color: "#fff",
                 fontWeight: 800,
                 fontSize: "0.75rem",
@@ -40,7 +40,7 @@ export default function KitBellezaSection() {
         <FadeInUp delay={0.1}>
           <p
             style={{
-              color: "#6b21a8",
+              color: "#0e7490",
               fontWeight: 800,
               fontSize: "clamp(1.6rem, 5vw, 2.4rem)",
               textAlign: "center",
@@ -54,7 +54,7 @@ export default function KitBellezaSection() {
           <p
             className="font-dancing"
             style={{
-              background: "linear-gradient(135deg, #ec4899, #be185d)",
+              background: "linear-gradient(135deg, #06b6d4, #2563eb)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -67,7 +67,7 @@ export default function KitBellezaSection() {
           </p>
           <p
             style={{
-              color: "#6b21a8",
+              color: "#0e7490",
               fontWeight: 800,
               fontSize: "clamp(1rem, 3.5vw, 1.5rem)",
               textAlign: "center",
@@ -78,7 +78,7 @@ export default function KitBellezaSection() {
             <span
               className="font-dancing"
               style={{
-                background: "linear-gradient(135deg, #ec4899, #f59e0b)",
+                background: "linear-gradient(135deg, #0891b2, #f59e0b)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -91,7 +91,7 @@ export default function KitBellezaSection() {
           <p
             style={{
               textAlign: "center",
-              color: "#9333ea",
+              color: "#0891b2",
               fontSize: "clamp(0.78rem, 2.2vw, 0.9rem)",
               fontWeight: 600,
               marginTop: 6,
@@ -125,7 +125,7 @@ export default function KitBellezaSection() {
                 >
                   Porque ella merece el mejor cuidado,{" "}
                   <strong>regálale belleza</strong> para que se sienta{" "}
-                  <span style={{ color: "#ec4899", fontWeight: 700 }}>
+                  <span style={{ color: "#0891b2", fontWeight: 700 }}>
                     única y especial
                   </span>
                 </p>
@@ -157,7 +157,7 @@ export default function KitBellezaSection() {
           <div style={{ textAlign: "center", margin: "40px 0 20px" }}>
             <span
               style={{
-                background: "linear-gradient(90deg, #a855f7, #ec4899)",
+                background: "linear-gradient(90deg, #06b6d4, #3b82f6)",
                 color: "#fff",
                 fontWeight: 900,
                 fontSize: "1rem",
@@ -167,7 +167,7 @@ export default function KitBellezaSection() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 8,
-                boxShadow: "0 10px 25px rgba(236,72,153,0.3)"
+                boxShadow: "0 10px 25px rgba(6,182,212,0.3)"
               }}
             >
               PRODUCTOS CLAVE <Heart size={18} fill="white" />
@@ -208,7 +208,7 @@ export default function KitBellezaSection() {
               <p
                 className="font-black"
                 style={{
-                  color: "#ec4899",
+                  color: "#0891b2",
                   fontSize: "clamp(1.1rem, 3.2vw, 1.4rem)",
                   textTransform: "uppercase",
                   lineHeight: 1.1,
@@ -221,7 +221,7 @@ export default function KitBellezaSection() {
               <p
                 style={{
                   fontSize: "clamp(0.85rem, 2.2vw, 0.95rem)",
-                  color: "#6b21a8",
+                  color: "#164e63",
                   lineHeight: 1.5,
                   marginBottom: 16,
                   fontWeight: 500
@@ -237,7 +237,7 @@ export default function KitBellezaSection() {
                   { icon: <Check size={16} />, text: "Resultados profesionales" },
                 ].map((b, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-                    <div style={{ color: "#ec4899" }}>{b.icon}</div>
+                    <div style={{ color: "#06b6d4" }}>{b.icon}</div>
                     <span style={{ fontSize: "0.85rem", color: "#4b5563", fontWeight: 600 }}>{b.text}</span>
                   </div>
                 ))}
@@ -276,7 +276,7 @@ export default function KitBellezaSection() {
               <p
                 className="font-black"
                 style={{
-                  color: "#ec4899",
+                  color: "#0891b2",
                   fontSize: "clamp(1.1rem, 3.2vw, 1.4rem)",
                   textTransform: "uppercase",
                   lineHeight: 1.1,
@@ -289,7 +289,7 @@ export default function KitBellezaSection() {
               <p
                 style={{
                   fontSize: "clamp(0.85rem, 2.2vw, 0.95rem)",
-                  color: "#6b21a8",
+                  color: "#164e63",
                   lineHeight: 1.5,
                   marginBottom: 16,
                   fontWeight: 500
@@ -305,7 +305,7 @@ export default function KitBellezaSection() {
                   { icon: <Check size={16} />, text: "Colágeno concentrado" },
                 ].map((b, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-                    <div style={{ color: "#ec4899" }}>{b.icon}</div>
+                    <div style={{ color: "#06b6d4" }}>{b.icon}</div>
                     <span style={{ fontSize: "0.85rem", color: "#4b5563", fontWeight: 600 }}>{b.text}</span>
                   </div>
                 ))}
@@ -314,13 +314,13 @@ export default function KitBellezaSection() {
               <div
                 style={{
                   padding: "10px 16px",
-                  background: "rgba(168,85,247,0.12)",
+                  background: "rgba(6,182,212,0.12)",
                   borderRadius: 14,
                   fontSize: "clamp(0.75rem, 2vw, 0.85rem)",
-                  color: "#7c3aed",
+                  color: "#0891b2",
                   fontWeight: 800,
                   width: "100%",
-                  border: "1px solid rgba(168,85,247,0.25)",
+                  border: "1px solid rgba(6,182,212,0.25)",
                   textAlign: "center"
                 }}
               >
@@ -371,7 +371,7 @@ export default function KitBellezaSection() {
             style={{
               textAlign: "center",
               fontSize: "0.7rem",
-              color: "#9333ea",
+              color: "#0891b2",
               marginTop: 14,
               fontStyle: "italic",
               opacity: 0.8,

@@ -45,7 +45,7 @@ export const KITS = {
         extra: "Llevala a todos lados contigo",
       },
       {
-        nombre: "Parches Hidrogel",
+        nombre: "1 Par de Parches Hidrogel",
         descripcion: "Hidrata, reduce ojeras y bolsas. Mirada fresca y descansada.",
         icono: "Eye",
         extra: "Relajacion y cuidado para mama",
@@ -61,12 +61,12 @@ export const KITS = {
   belleza: {
     id: "kit-bienestar",
     nombre: "Kit de Belleza para Mamá",
-    precio: "S/ 48",
+    precio: "S/ 54",
     precioNum: 48,
     whatsappMessage: [
       `${hola} Hola! Quiero pedir el *Kit de Belleza para Mamá*`,
       `(Masajeador Recargable + Parches Hidrogel 12 und)`,
-      `por solo *S/ 48*. Esta disponible? ${regalo} ${morado}`
+      `por solo *S/ 54*. Esta disponible? ${regalo} ${morado}`
     ].join("\n"),
     productos: [
       {

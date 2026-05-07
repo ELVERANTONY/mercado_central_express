@@ -15,9 +15,9 @@ export default function KitCocinaSection() {
     <section
       id="kit-cocina"
       className="bg-bienestar"
-      style={{ 
-        padding: "48px 20px 100px", 
-        position: "relative", 
+      style={{
+        padding: "48px 20px 100px",
+        position: "relative",
         overflow: "hidden",
       }}
     >
@@ -27,7 +27,7 @@ export default function KitCocinaSection() {
           <div style={{ textAlign: "center", marginBottom: 8 }}>
             <span
               style={{
-                background: "linear-gradient(90deg, #9333ea, #ec4899)",
+                background: "linear-gradient(90deg, #d97706, #fbbf24)",
                 color: "#fff",
                 fontWeight: 800,
                 fontSize: "0.75rem",
@@ -44,7 +44,7 @@ export default function KitCocinaSection() {
         <FadeInUp delay={0.1}>
           <p
             style={{
-              color: "#6b21a8",
+              color: "#92400e",
               fontWeight: 800,
               fontSize: "clamp(1.6rem, 5vw, 2.4rem)",
               textAlign: "center",
@@ -56,7 +56,7 @@ export default function KitCocinaSection() {
           <p
             className="font-dancing"
             style={{
-              background: "linear-gradient(135deg, #ec4899, #be185d)",
+              background: "linear-gradient(135deg, #f59e0b, #d97706)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -69,7 +69,7 @@ export default function KitCocinaSection() {
           </p>
           <p
             style={{
-              color: "#6b21a8",
+              color: "#92400e",
               fontWeight: 800,
               fontSize: "clamp(1rem, 3.5vw, 1.5rem)",
               textAlign: "center",
@@ -80,7 +80,7 @@ export default function KitCocinaSection() {
             <span
               className="font-dancing"
               style={{
-                background: "linear-gradient(135deg, #ec4899, #f59e0b)",
+                background: "linear-gradient(135deg, #f59e0b, #ea580c)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -93,7 +93,7 @@ export default function KitCocinaSection() {
           <p
             style={{
               textAlign: "center",
-              color: "#9333ea",
+              color: "#d97706",
               fontSize: "clamp(0.78rem, 2.2vw, 0.9rem)",
               fontWeight: 600,
               marginTop: 6,
@@ -127,7 +127,7 @@ export default function KitCocinaSection() {
                 >
                   Porque ella merece lo mejor en su cocina,{" "}
                   <strong>regálale potencia</strong> para que sus preparaciones sean{" "}
-                  <span style={{ color: "#ec4899", fontWeight: 700 }}>
+                  <span style={{ color: "#d97706", fontWeight: 700 }}>
                     más fáciles y rápidas
                   </span>
                 </p>
@@ -155,7 +155,7 @@ export default function KitCocinaSection() {
           <div style={{ textAlign: "center", margin: "40px 0 20px" }}>
             <span
               style={{
-                background: "linear-gradient(90deg, #a855f7, #ec4899)",
+                background: "linear-gradient(90deg, #f59e0b, #ea580c)",
                 color: "#fff",
                 fontWeight: 900,
                 fontSize: "1rem",
@@ -165,7 +165,7 @@ export default function KitCocinaSection() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 8,
-                boxShadow: "0 10px 25px rgba(236,72,153,0.3)"
+                boxShadow: "0 10px 25px rgba(245,158,11,0.3)"
               }}
             >
               2 PRODUCTOS CLAVE <Heart size={18} fill="white" />
@@ -179,10 +179,10 @@ export default function KitCocinaSection() {
           <ScaleIn delay={0.3}>
             <motion.div
               className="glass-card w-full"
-              style={{ 
-                padding: "140px 20px 24px", 
-                textAlign: "center", 
-                height: "100%", 
+              style={{
+                padding: "140px 20px 24px",
+                textAlign: "center",
+                height: "100%",
                 position: "relative",
                 overflow: "visible",
                 marginTop: 80,
@@ -194,9 +194,9 @@ export default function KitCocinaSection() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="absolute -top-24 md:-top-32 left-0 right-0 flex justify-center pointer-events-none z-10">
-                <motion.img 
-                  src={imgProcesadora} 
-                  alt="Procesadora Eléctrica" 
+                <motion.img
+                  src={imgProcesadora}
+                  alt="Procesadora Eléctrica"
                   className="h-[200px] md:h-[260px] w-auto object-contain drop-shadow-2xl"
                   animate={{ y: [0, -6, 0] }}
                   transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
@@ -206,7 +206,7 @@ export default function KitCocinaSection() {
               <p
                 className="font-black"
                 style={{
-                  color: "#ec4899",
+                  color: "#92400e",
                   fontSize: "clamp(1rem, 2.8vw, 1.2rem)",
                   textTransform: "uppercase",
                   lineHeight: 1.1,
@@ -215,30 +215,30 @@ export default function KitCocinaSection() {
               >
                 Procesadora Eléctrica
               </p>
-              
+
               <div style={{ alignSelf: "stretch", marginTop: 10, marginBottom: 20 }}>
                 {kit.procesadora.specs.slice(0, 4).map((s, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
-                    <div style={{ color: "#ec4899" }}><CheckCircle2 size={16} /></div>
+                    <div style={{ color: "#f59e0b" }}><CheckCircle2 size={16} /></div>
                     <span style={{ fontSize: "0.82rem", color: "#4b5563", fontWeight: 600, textAlign: "left" }}>{s}</span>
                   </div>
                 ))}
               </div>
-              
+
               <div className="mt-auto w-full">
                 <div
                   style={{
                     padding: "10px 16px",
-                    background: "rgba(168,85,247,0.12)",
+                    background: "rgba(245,158,11,0.12)",
                     borderRadius: 14,
                     fontSize: "0.75rem",
-                    color: "#7c3aed",
+                    color: "#92400e",
                     fontWeight: 800,
                     width: "100%",
-                    border: "1px solid rgba(168,85,247,0.25)",
+                    border: "1px solid rgba(245,158,11,0.25)",
                   }}
                 >
-                  PREPARACIONES AL INSTANTE ⭐
+                  Perfecta para tamales, humitas, moler carnes, semillas y verduras (crudas o cocidas)🥩
                 </div>
               </div>
             </motion.div>
@@ -248,10 +248,10 @@ export default function KitCocinaSection() {
           <ScaleIn delay={0.4}>
             <motion.div
               className="glass-card w-full"
-              style={{ 
-                padding: "140px 20px 24px", 
-                textAlign: "center", 
-                height: "100%", 
+              style={{
+                padding: "140px 20px 24px",
+                textAlign: "center",
+                height: "100%",
                 position: "relative",
                 overflow: "visible",
                 marginTop: 80,
@@ -263,9 +263,9 @@ export default function KitCocinaSection() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="absolute -top-24 md:-top-32 left-0 right-0 flex justify-center pointer-events-none z-10">
-                <motion.img 
-                  src={imgMolino} 
-                  alt="Molino Granos Secos" 
+                <motion.img
+                  src={imgMolino}
+                  alt="Molino Granos Secos"
                   className="h-[180px] md:h-[240px] w-auto object-contain drop-shadow-2xl"
                   animate={{ y: [0, -6, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
@@ -275,7 +275,7 @@ export default function KitCocinaSection() {
               <p
                 className="font-black"
                 style={{
-                  color: "#ec4899",
+                  color: "#92400e",
                   fontSize: "clamp(1rem, 2.8vw, 1.2rem)",
                   textTransform: "uppercase",
                   lineHeight: 1.1,
@@ -288,7 +288,7 @@ export default function KitCocinaSection() {
               <div style={{ alignSelf: "stretch", marginTop: 10, marginBottom: 20 }}>
                 {kit.molino.specs.slice(0, 4).map((s, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
-                    <div style={{ color: "#ec4899" }}><CheckCircle2 size={16} /></div>
+                    <div style={{ color: "#f59e0b" }}><CheckCircle2 size={16} /></div>
                     <span style={{ fontSize: "0.82rem", color: "#4b5563", fontWeight: 600, textAlign: "left" }}>{s}</span>
                   </div>
                 ))}
@@ -298,16 +298,16 @@ export default function KitCocinaSection() {
                 <div
                   style={{
                     padding: "10px 16px",
-                    background: "rgba(168,85,247,0.12)",
+                    background: "rgba(245,158,11,0.12)",
                     borderRadius: 14,
                     fontSize: "0.75rem",
-                    color: "#7c3aed",
+                    color: "#92400e",
                     fontWeight: 800,
                     width: "100%",
-                    border: "1px solid rgba(168,85,247,0.25)",
+                    border: "1px solid rgba(245,158,11,0.25)",
                   }}
                 >
-                  MOLIDO PERFECTO SIEMPRE 🌾
+                  Ideal para granos y semillas secos🌾
                 </div>
               </div>
             </motion.div>
@@ -318,25 +318,25 @@ export default function KitCocinaSection() {
         <FadeInUp delay={0.5}>
           <div style={{ marginTop: 80, marginBottom: 40 }}>
             <div className="glass-card" style={{ padding: "20px 32px", borderRadius: 30 }}>
-               <p className="text-center font-black text-purple-900 text-[0.7rem] uppercase tracking-widest mb-6 opacity-60">❤️ DOS ALIADOS INDISPENSABLES ❤️</p>
-               <div className="flex flex-wrap justify-center gap-12 md:gap-20">
-                  <div className="flex flex-col items-center gap-2">
-                     <span className="text-3xl bg-white/40 p-3 rounded-2xl">🥩</span>
-                     <p className="text-[0.65rem] font-bold text-purple-900 uppercase">PICA CARNES</p>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                     <span className="text-3xl bg-white/40 p-3 rounded-2xl">🥗</span>
-                     <p className="text-[0.65rem] font-bold text-purple-900 uppercase">MEZCLAS</p>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                     <span className="text-3xl bg-white/40 p-3 rounded-2xl">🌾</span>
-                     <p className="text-[0.65rem] font-bold text-purple-900 uppercase">GRANOS</p>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                     <span className="text-3xl bg-white/40 p-3 rounded-2xl">🌿</span>
-                     <p className="text-[0.65rem] font-bold text-purple-900 uppercase">ESPECIAS</p>
-                  </div>
-               </div>
+              <p className="text-center font-black text-amber-900 text-[0.7rem] uppercase tracking-widest mb-6 opacity-60">❤️ DOS ALIADOS INDISPENSABLES ❤️</p>
+              <div className="flex flex-wrap justify-center gap-12 md:gap-20">
+                <div className="flex flex-col items-center gap-2">
+                  <span className="text-3xl bg-white/40 p-3 rounded-2xl">🥩</span>
+                  <p className="text-[0.65rem] font-bold text-amber-900 uppercase">PICA CARNES</p>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <span className="text-3xl bg-white/40 p-3 rounded-2xl">🥗</span>
+                  <p className="text-[0.65rem] font-bold text-amber-900 uppercase">MEZCLAS</p>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <span className="text-3xl bg-white/40 p-3 rounded-2xl">🌾</span>
+                  <p className="text-[0.65rem] font-bold text-amber-900 uppercase">GRANOS</p>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <span className="text-3xl bg-white/40 p-3 rounded-2xl">🌿</span>
+                  <p className="text-[0.65rem] font-bold text-amber-900 uppercase">ESPECIAS</p>
+                </div>
+              </div>
             </div>
           </div>
         </FadeInUp>
