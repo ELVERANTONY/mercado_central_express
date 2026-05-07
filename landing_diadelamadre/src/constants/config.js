@@ -62,7 +62,7 @@ export const KITS = {
     id: "kit-bienestar",
     nombre: "Kit de Belleza para Mamá",
     precio: "S/ 54",
-    precioNum: 48,
+    precioNum: 54,
     whatsappMessage: [
       `${hola} Hola! Quiero pedir el *Kit de Belleza para Mamá*`,
       `(Masajeador Recargable + Parches Hidrogel 12 und)`,

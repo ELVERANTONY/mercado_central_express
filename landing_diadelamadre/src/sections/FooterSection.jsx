@@ -86,7 +86,7 @@ export function StickyCTA({
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 max-w-[600px] mx-auto">
               {[
                 { kit: "bienestar", label: "Kit Bienestar", precio: "S/ 74" },
-                { kit: "belleza", label: "Kit Belleza", precio: "S/ 48" },
+                { kit: "belleza", label: "Kit Belleza", precio: "S/ 54" },
                 { kit: "cocina", label: "Combo Cocina", precio: "S/ 120" },
               ].map((item) => (
                 <a
