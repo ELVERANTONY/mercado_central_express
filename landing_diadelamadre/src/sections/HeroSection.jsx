@@ -173,8 +173,8 @@ export default function HeroSection() {
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.7 }}
-                  className="w-[125%] md:w-[115%] h-auto block mx-auto relative z-[100] -mt-72 md:-mt-140 mb-16 md:mb-20"
-                  style={{  }}
+                  className="w-[125%] md:w-[115%] h-auto block mx-auto relative z-10 -mt-100 md:-mt-160 mb-16 md:mb-20"
+                  style={{ mixBlendMode: "multiply" }}
                 />
 
                 {/* Purple Box "El regalo que ella merece" (BACKGROUND LAYER) */}
