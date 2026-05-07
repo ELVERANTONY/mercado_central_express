@@ -28,7 +28,7 @@ export const KITS = {
     // Texto PLANO — se encoda en WhatsAppButton.jsx
     whatsappMessage: [
       `${hola} Hola! Quiero pedir el *Kit de Bienestar Mamá*`,
-      `(Cepillo One Step + Mini Plancha + Parches Hidrogel)`,
+      `(Cepillo One Step + Mini Plancha + un par de Parches Hidrogel)`,
       `por solo *S/ 74*. Esta disponible? ${regalo} ${corazon}`
     ].join("\n"),
     productos: [
@@ -65,7 +65,7 @@ export const KITS = {
     precioNum: 54,
     whatsappMessage: [
       `${hola} Hola! Quiero pedir el *Kit de Belleza para Mamá*`,
-      `(Masajeador Recargable + Parches Hidrogel 12 und)`,
+      `(Masajeador Recargable + seis pares deParches Hidrogel (12 und))`,
       `por solo *S/ 54*. Esta disponible? ${regalo} ${morado}`
     ].join("\n"),
     productos: [
