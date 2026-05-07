@@ -199,15 +199,15 @@ export default function KitBienestarSection() {
           </div>
         </FadeInUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14 items-start mt-16 md:mt-20">
           {kit.productos.map((p, i) => (
             <ScaleIn key={i} delay={0.3 + i * 0.1}>
               <motion.div
-                className="glass-card"
+                className="glass-card w-full"
                 style={{ 
-                  padding: "130px 16px 20px", // INCREASED TOP PADDING
+                  padding: "140px 20px 24px", // INCREASED TOP PADDING
                   textAlign: "center", 
-                  height: "auto", 
+                  height: "100%", 
                   position: "relative",
                   overflow: "visible",
                   marginTop: 80,
@@ -215,15 +215,17 @@ export default function KitBienestarSection() {
                   flexDirection: "column",
                   alignItems: "center"
                 }}
-                whileHover={{ y: -5, boxShadow: "0 20px 45px rgba(168,85,247,0.25)" }}
+                whileHover={{ y: -8, boxShadow: "0 25px 50px rgba(168,85,247,0.3)" }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                {/* Floating Product Image */}
-                <div className="absolute -top-20 md:-top-24 left-0 right-0 flex justify-center pointer-events-none z-10">
-                  <img 
+                {/* Floating Product Image - LARGER and POPPING OUT */}
+                <div className="absolute -top-24 md:-top-32 left-0 right-0 flex justify-center pointer-events-none z-10">
+                  <motion.img 
                     src={productImages[i]} 
                     alt={p.nombre} 
-                    className="h-[180px] md:h-[220px] max-w-[140%] object-contain drop-shadow-2xl"
+                    className="h-[200px] md:h-[260px] w-auto object-contain drop-shadow-2xl"
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }}
                   />
                 </div>
 
@@ -231,10 +233,10 @@ export default function KitBienestarSection() {
                   className="font-black"
                   style={{
                     color: "#ec4899",
-                    fontSize: "clamp(0.8rem, 2.5vw, 1rem)",
+                    fontSize: "clamp(1rem, 2.8vw, 1.2rem)",
                     textTransform: "uppercase",
                     lineHeight: 1.2,
-                    marginBottom: 8,
+                    marginBottom: 10,
                     letterSpacing: "0.05em"
                   }}
                 >
@@ -242,10 +244,10 @@ export default function KitBienestarSection() {
                 </p>
                 <p
                   style={{
-                    fontSize: "clamp(0.75rem, 2.2vw, 0.85rem)",
+                    fontSize: "clamp(0.85rem, 2.2vw, 0.95rem)",
                     color: "#6b21a8",
-                    lineHeight: 1.4,
-                    marginBottom: 12,
+                    lineHeight: 1.5,
+                    marginBottom: 16,
                     fontWeight: 500
                   }}
                 >
@@ -254,14 +256,14 @@ export default function KitBienestarSection() {
                 <div
                   style={{
                     marginTop: "auto",
-                    padding: "8px 12px",
-                    background: "rgba(168,85,247,0.1)",
-                    borderRadius: 12,
-                    fontSize: "clamp(0.65rem, 2vw, 0.75rem)",
+                    padding: "10px 16px",
+                    background: "rgba(168,85,247,0.12)",
+                    borderRadius: 14,
+                    fontSize: "clamp(0.75rem, 2vw, 0.85rem)",
                     color: "#7c3aed",
-                    fontWeight: 700,
+                    fontWeight: 800,
                     width: "100%",
-                    border: "1px solid rgba(168,85,247,0.2)"
+                    border: "1px solid rgba(168,85,247,0.25)"
                   }}
                 >
                   {p.extra}

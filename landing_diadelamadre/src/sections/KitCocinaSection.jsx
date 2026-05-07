@@ -1,67 +1,42 @@
 import { motion } from "framer-motion";
-import { Heart, CheckCircle2, Shield, Star, Zap, ThumbsUp } from "lucide-react";
+import { Heart, CheckCircle2, Shield, Star, Zap, ThumbsUp, Sparkles, Snowflake } from "lucide-react";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { FadeInUp, ScaleIn } from "../components/Animations";
+import { GiftBadge, BenefitItem } from "../components/UIKit";
 import { KITS } from "../constants/config";
 import imgProcesadora from "../assets/product_procesador_electrico.png";
 import imgMolino from "../assets/product_molino_electrico.png";
 import imgMomCocina from "../assets/cocina_mom.png";
 
 const kit = KITS.cocina;
-const BADGE_ICONS = { Shield, Star, Zap, ThumbsUp };
 
 export default function KitCocinaSection() {
   return (
     <section
       id="kit-cocina"
-      className="bg-cocina"
-      style={{ padding: "48px 20px", position: "relative", overflow: "hidden" }}
+      className="bg-bienestar"
+      style={{ 
+        padding: "48px 20px 100px", 
+        position: "relative", 
+        overflow: "hidden",
+      }}
     >
-      {/* Decorative blobs */}
-      <div
-        style={{
-          position: "absolute",
-          top: -40,
-          right: -40,
-          width: 220,
-          height: 220,
-          background: "radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%)",
-          borderRadius: "50%",
-          pointerEvents: "none",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          bottom: -40,
-          left: -40,
-          width: 200,
-          height: 200,
-          background: "radial-gradient(circle, rgba(236,72,153,0.1) 0%, transparent 70%)",
-          borderRadius: "50%",
-          pointerEvents: "none",
-        }}
-      />
-
-      <div style={{ maxWidth: 700, margin: "0 auto" }}>
+      <div style={{ maxWidth: 800, margin: "0 auto" }}>
         {/* Header */}
         <FadeInUp>
-          <div style={{ textAlign: "center", marginBottom: 12 }}>
+          <div style={{ textAlign: "center", marginBottom: 8 }}>
             <span
               style={{
-                background: "linear-gradient(135deg, #7c3aed, #ec4899)",
+                background: "linear-gradient(90deg, #9333ea, #ec4899)",
                 color: "#fff",
                 fontWeight: 800,
-                fontSize: "0.8rem",
-                letterSpacing: "0.08em",
-                padding: "6px 18px",
+                fontSize: "0.75rem",
+                letterSpacing: "0.1em",
+                padding: "5px 16px",
                 borderRadius: 999,
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
               }}
             >
-              <Heart size={13} fill="white" /> COMBO PERFECTO <Heart size={13} fill="white" />
+              COMBO PERFECTO ♥
             </span>
           </div>
         </FadeInUp>
@@ -71,9 +46,9 @@ export default function KitCocinaSection() {
             style={{
               color: "#6b21a8",
               fontWeight: 800,
-              fontSize: "clamp(1.4rem, 5vw, 2.2rem)",
+              fontSize: "clamp(1.6rem, 5vw, 2.4rem)",
               textAlign: "center",
-              lineHeight: 1.15,
+              lineHeight: 1.1,
             }}
           >
             Para una
@@ -85,7 +60,7 @@ export default function KitCocinaSection() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              fontSize: "clamp(2.2rem, 9vw, 3.8rem)",
+              fontSize: "clamp(2.2rem, 9vw, 4rem)",
               textAlign: "center",
               lineHeight: 1,
             }}
@@ -129,232 +104,246 @@ export default function KitCocinaSection() {
           </p>
         </FadeInUp>
 
-        {/* ── COMBO: Procesadora + Molino ── */}
-        <FadeInUp delay={0.2}>
+        {/* Hero Card - Matches KitBelleza */}
+        <FadeInUp delay={0.15}>
           <div
             className="glass-card-dark"
-            style={{ 
-              marginTop: 100, 
-              padding: "24px 16px", 
-              position: "relative" 
+            style={{
+              padding: "24px 20px",
+              marginTop: 20,
+              position: "relative",
             }}
           >
-            {/* Products 1 + 1 */}
-            <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center gap-20 md:gap-20 mt-20 md:mt-0">
-              {/* Procesadora */}
-              <div style={{ flex: "1 1 240px", minWidth: 200, display: "flex", flexDirection: "column" }}>
-                <div className="flex justify-center -mt-32 md:-mt-40 mb-4 z-10 relative">
-                  <img 
-                    src={imgProcesadora} 
-                    alt="Procesadora Eléctrica" 
-                    className="h-[250px] md:h-[320px] w-auto object-contain drop-shadow-2xl"
-                  />
-                </div>
-
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center text-center md:text-left">
+              <div className="flex flex-col items-center md:items-start">
                 <p
+                  className="text-center md:text-left"
                   style={{
-                    color: "#6b21a8",
-                    fontWeight: 800,
-                    fontSize: "clamp(0.75rem, 2.2vw, 0.9rem)",
-                    textTransform: "uppercase",
-                    marginBottom: 12,
-                    textAlign: "center"
+                    color: "#4b2d63",
+                    fontSize: "clamp(0.85rem, 2.5vw, 1rem)",
+                    lineHeight: 1.55,
+                    marginBottom: 16,
                   }}
                 >
-                  ⭐ Procesadora Eléctrica
-                </p>
-                
-                <div style={{ display: "flex", flexDirection: "column", gap: 8, flex: 1 }}>
-                  {kit.procesadora.specs.map((s, i) => (
-                    <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
-                      <CheckCircle2 size={15} color="#a855f7" style={{ flexShrink: 0, marginTop: 2 }} />
-                      <span style={{ fontSize: "clamp(0.7rem, 2vw, 0.82rem)", color: "#4b2d63", lineHeight: 1.4, fontWeight: 500 }}>
-                        {s}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Plus */}
-              <div className="flex items-center justify-center shrink-0 my-4 md:my-0">
-                <div className="combo-plus w-10 h-10 text-xl flex items-center justify-center">+</div>
-              </div>
-
-              {/* Molino */}
-              <div style={{ flex: "1 1 240px", minWidth: 200, display: "flex", flexDirection: "column" }}>
-                <div className="flex justify-center -mt-28 md:-mt-36 mb-4 z-10 relative">
-                  <img 
-                    src={imgMolino} 
-                    alt="Molino Granos Secos" 
-                    className="h-[220px] md:h-[280px] w-auto object-contain drop-shadow-2xl"
-                  />
-                </div>
-
-                <p
-                  style={{
-                    color: "#6b21a8",
-                    fontWeight: 800,
-                    fontSize: "clamp(0.75rem, 2.2vw, 0.9rem)",
-                    textTransform: "uppercase",
-                    marginBottom: 12,
-                    textAlign: "center"
-                  }}
-                >
-                  ⭐ Molino Granos Secos
-                </p>
-
-                <div style={{ display: "flex", flexDirection: "column", gap: 6, flex: 1 }}>
-                  {kit.molino.specs.map((s, i) => (
-                    <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 6 }}>
-                      <CheckCircle2 size={13} color="#a855f7" style={{ flexShrink: 0, marginTop: 2 }} />
-                      <span style={{ fontSize: "clamp(0.62rem, 1.8vw, 0.72rem)", color: "#4b2d63", lineHeight: 1.4 }}>
-                        {s}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </FadeInUp>
-
-        {/* ── Usos Comparativa ── */}
-        <FadeInUp delay={0.35}>
-          <div className="mt-8 md:mt-10 px-2">
-            <div className="text-center mb-6">
-              <span className="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-extrabold text-[0.7rem] md:text-xs tracking-wider px-4 py-2 rounded-full inline-flex items-center gap-2">
-                <Heart size={12} fill="white" /> DOS ALIADOS INDISPENSABLES EN TU COCINA <Heart size={12} fill="white" />
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Procesadora usos */}
-              <div className="glass-card" style={{ padding: "16px 14px" }}>
-                <p
-                  style={{
-                    color: "#ec4899",
-                    fontWeight: 800,
-                    fontSize: "clamp(0.65rem, 2vw, 0.78rem)",
-                    textTransform: "uppercase",
-                    marginBottom: 10,
-                    textAlign: "center",
-                  }}
-                >
-                  Procesadora Eléctrica
-                </p>
-                <div style={{ display: "flex", justifyContent: "space-around", gap: 4 }}>
-                  {kit.procesadora.usos.map((uso, i) => (
-                    <div key={i} style={{ textAlign: "center", flex: 1 }}>
-                      <div
-                        style={{
-                          fontSize: "1.4rem",
-                          marginBottom: 4,
-                          background: "linear-gradient(135deg, #fce7f3, #ede9fe)",
-                          borderRadius: 10,
-                          padding: 6,
-                        }}
-                      >
-                        {i === 0 ? "🥩" : i === 1 ? "🥗" : "🌶️"}
-                      </div>
-                      <p
-                        style={{
-                          fontSize: "clamp(0.55rem, 1.4vw, 0.62rem)",
-                          color: "#6b21a8",
-                          fontWeight: 600,
-                          lineHeight: 1.2,
-                        }}
-                      >
-                        {uso}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Molino usos */}
-              <div className="glass-card" style={{ padding: "16px 14px" }}>
-                <p
-                  style={{
-                    color: "#ec4899",
-                    fontWeight: 800,
-                    fontSize: "clamp(0.65rem, 2vw, 0.78rem)",
-                    textTransform: "uppercase",
-                    marginBottom: 10,
-                    textAlign: "center",
-                  }}
-                >
-                  Molino para Granos Secos
-                </p>
-                <div style={{ display: "flex", justifyContent: "space-around", gap: 4 }}>
-                  {kit.molino.usos.map((uso, i) => (
-                    <div key={i} style={{ textAlign: "center", flex: 1 }}>
-                      <div
-                        style={{
-                          fontSize: "1.4rem",
-                          marginBottom: 4,
-                          background: "linear-gradient(135deg, #fce7f3, #ede9fe)",
-                          borderRadius: 10,
-                          padding: 6,
-                        }}
-                      >
-                        {i === 0 ? "🌾" : i === 1 ? "🫘" : "🌿"}
-                      </div>
-                      <p
-                        style={{
-                          fontSize: "clamp(0.55rem, 1.4vw, 0.62rem)",
-                          color: "#6b21a8",
-                          fontWeight: 600,
-                          lineHeight: 1.2,
-                        }}
-                      >
-                        {uso}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </FadeInUp>
-
-        {/* ── Quality Badges ── */}
-        <FadeInUp delay={0.45}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
-            {kit.badges.map((b, i) => {
-              const Icon = BADGE_ICONS[b.icono] || Shield;
-              return (
-                <div
-                  key={i}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 8,
-                    background: "rgba(255,255,255,0.75)",
-                    borderRadius: 12,
-                    padding: "10px 12px",
-                    border: "1px solid rgba(168,85,247,0.15)",
-                  }}
-                >
-                  <Icon size={18} color="#9333ea" strokeWidth={2} />
-                  <span
-                    style={{
-                      fontSize: "clamp(0.6rem, 1.7vw, 0.72rem)",
-                      color: "#4b2d63",
-                      fontWeight: 600,
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {b.texto}
+                  Porque ella merece lo mejor en su cocina,{" "}
+                  <strong>regálale potencia</strong> para que sus preparaciones sean{" "}
+                  <span style={{ color: "#ec4899", fontWeight: 700 }}>
+                    más fáciles y rápidas
                   </span>
+                </p>
+
+                <div className="space-y-1">
+                  <BenefitItem text="Ahorra tiempo en cada comida" icon={Zap} />
+                  <BenefitItem text="Resultados profesionales en casa" icon={Star} />
+                  <BenefitItem text="Fácil de usar y de limpiar" icon={ThumbsUp} />
                 </div>
-              );
-            })}
+              </div>
+
+              <div className="flex justify-center md:min-w-[90px]">
+                <GiftBadge>
+                  <p>¡EL CHEF</p>
+                  <p>QUE ELLA</p>
+                  <p>MERECE!</p>
+                </GiftBadge>
+              </div>
+            </div>
           </div>
         </FadeInUp>
 
-        <FadeInUp delay={0.55}>
-          <div className="mt-16 md:mt-24 flex justify-center px-4">
+        {/* 2 PRODUCTOS Badge */}
+        <FadeInUp delay={0.25}>
+          <div style={{ textAlign: "center", margin: "40px 0 20px" }}>
+            <span
+              style={{
+                background: "linear-gradient(90deg, #a855f7, #ec4899)",
+                color: "#fff",
+                fontWeight: 900,
+                fontSize: "1rem",
+                letterSpacing: "0.1em",
+                padding: "10px 28px",
+                borderRadius: 999,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                boxShadow: "0 10px 25px rgba(236,72,153,0.3)"
+              }}
+            >
+              2 PRODUCTOS CLAVE <Heart size={18} fill="white" />
+            </span>
+          </div>
+        </FadeInUp>
+
+        {/* Product Cards — Exact Copy of KitBelleza style */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start mt-16 md:mt-24">
+          {/* Procesadora */}
+          <ScaleIn delay={0.3}>
+            <motion.div
+              className="glass-card w-full"
+              style={{ 
+                padding: "140px 20px 24px", 
+                textAlign: "center", 
+                height: "100%", 
+                position: "relative",
+                overflow: "visible",
+                marginTop: 80,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center"
+              }}
+              whileHover={{ y: -8, boxShadow: "0 25px 50px rgba(168,85,247,0.3)" }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <div className="absolute -top-24 md:-top-32 left-0 right-0 flex justify-center pointer-events-none z-10">
+                <motion.img 
+                  src={imgProcesadora} 
+                  alt="Procesadora Eléctrica" 
+                  className="h-[200px] md:h-[260px] w-auto object-contain drop-shadow-2xl"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                />
+              </div>
+
+              <p
+                className="font-black"
+                style={{
+                  color: "#ec4899",
+                  fontSize: "clamp(1rem, 2.8vw, 1.2rem)",
+                  textTransform: "uppercase",
+                  lineHeight: 1.1,
+                  marginBottom: 10,
+                }}
+              >
+                Procesadora Eléctrica
+              </p>
+              
+              <div style={{ alignSelf: "stretch", marginTop: 10, marginBottom: 20 }}>
+                {kit.procesadora.specs.slice(0, 4).map((s, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+                    <div style={{ color: "#ec4899" }}><CheckCircle2 size={16} /></div>
+                    <span style={{ fontSize: "0.82rem", color: "#4b5563", fontWeight: 600, textAlign: "left" }}>{s}</span>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="mt-auto w-full">
+                <div
+                  style={{
+                    padding: "10px 16px",
+                    background: "rgba(168,85,247,0.12)",
+                    borderRadius: 14,
+                    fontSize: "0.75rem",
+                    color: "#7c3aed",
+                    fontWeight: 800,
+                    width: "100%",
+                    border: "1px solid rgba(168,85,247,0.25)",
+                  }}
+                >
+                  PREPARACIONES AL INSTANTE ⭐
+                </div>
+              </div>
+            </motion.div>
+          </ScaleIn>
+
+          {/* Molino */}
+          <ScaleIn delay={0.4}>
+            <motion.div
+              className="glass-card w-full"
+              style={{ 
+                padding: "140px 20px 24px", 
+                textAlign: "center", 
+                height: "100%", 
+                position: "relative",
+                overflow: "visible",
+                marginTop: 80,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center"
+              }}
+              whileHover={{ y: -8, boxShadow: "0 25px 50px rgba(168,85,247,0.3)" }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <div className="absolute -top-24 md:-top-32 left-0 right-0 flex justify-center pointer-events-none z-10">
+                <motion.img 
+                  src={imgMolino} 
+                  alt="Molino Granos Secos" 
+                  className="h-[180px] md:h-[240px] w-auto object-contain drop-shadow-2xl"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                />
+              </div>
+
+              <p
+                className="font-black"
+                style={{
+                  color: "#ec4899",
+                  fontSize: "clamp(1rem, 2.8vw, 1.2rem)",
+                  textTransform: "uppercase",
+                  lineHeight: 1.1,
+                  marginBottom: 10,
+                }}
+              >
+                Molino Granos Secos
+              </p>
+
+              <div style={{ alignSelf: "stretch", marginTop: 10, marginBottom: 20 }}>
+                {kit.molino.specs.slice(0, 4).map((s, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+                    <div style={{ color: "#ec4899" }}><CheckCircle2 size={16} /></div>
+                    <span style={{ fontSize: "0.82rem", color: "#4b5563", fontWeight: 600, textAlign: "left" }}>{s}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-auto w-full">
+                <div
+                  style={{
+                    padding: "10px 16px",
+                    background: "rgba(168,85,247,0.12)",
+                    borderRadius: 14,
+                    fontSize: "0.75rem",
+                    color: "#7c3aed",
+                    fontWeight: 800,
+                    width: "100%",
+                    border: "1px solid rgba(168,85,247,0.25)",
+                  }}
+                >
+                  MOLIDO PERFECTO SIEMPRE 🌾
+                </div>
+              </div>
+            </motion.div>
+          </ScaleIn>
+        </div>
+
+        {/* Aliados Indispensables — Single Glass Bar (No more crowded separate cards) */}
+        <FadeInUp delay={0.5}>
+          <div style={{ marginTop: 80, marginBottom: 40 }}>
+            <div className="glass-card" style={{ padding: "20px 32px", borderRadius: 30 }}>
+               <p className="text-center font-black text-purple-900 text-[0.7rem] uppercase tracking-widest mb-6 opacity-60">❤️ DOS ALIADOS INDISPENSABLES ❤️</p>
+               <div className="flex flex-wrap justify-center gap-12 md:gap-20">
+                  <div className="flex flex-col items-center gap-2">
+                     <span className="text-3xl bg-white/40 p-3 rounded-2xl">🥩</span>
+                     <p className="text-[0.65rem] font-bold text-purple-900 uppercase">PICA CARNES</p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                     <span className="text-3xl bg-white/40 p-3 rounded-2xl">🥗</span>
+                     <p className="text-[0.65rem] font-bold text-purple-900 uppercase">MEZCLAS</p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                     <span className="text-3xl bg-white/40 p-3 rounded-2xl">🌾</span>
+                     <p className="text-[0.65rem] font-bold text-purple-900 uppercase">GRANOS</p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                     <span className="text-3xl bg-white/40 p-3 rounded-2xl">🌿</span>
+                     <p className="text-[0.65rem] font-bold text-purple-900 uppercase">ESPECIAS</p>
+                  </div>
+               </div>
+            </div>
+          </div>
+        </FadeInUp>
+
+        {/* Final Offer — Exact copy of KitBelleza pricing alignment */}
+        <FadeInUp delay={0.6}>
+          <div className="mt-20 flex justify-center px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-32 items-center max-w-[680px] w-full">
               {/* Gift box + image */}
               <div className="flex justify-center">
@@ -368,14 +357,14 @@ export default function KitCocinaSection() {
                 </div>
               </div>
 
-              {/* Offer + CTA */}
+              {/* Offer + CTA — PERFECTLY CENTERED & BALANCED */}
               <div className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
                 <div className="bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl p-5 border border-orange-200/30 w-full max-w-[300px]">
                   <p className="text-purple-900 font-extrabold text-lg mb-1">¡OFERTA LIMITADA!</p>
                   <p className="text-purple-800 text-sm opacity-90">Hazla feliz hoy, sorprenderla es fácil ❤️</p>
                 </div>
 
-                <div className="flex flex-col gap-4 w-full max-w-[300px]">
+                <div className="flex flex-col gap-4 w-full max-w-[260px]">
                   <div className="price-badge-gold py-4 px-6">
                     <p className="text-amber-900 text-xs font-bold uppercase tracking-widest mb-1">POR SOLO</p>
                     <p className="text-black text-5xl font-black leading-none">{kit.precio}</p>

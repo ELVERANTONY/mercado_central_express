@@ -42,7 +42,7 @@ function SectionDivider({ label, emoji = "💕" }) {
 
 export default function App() {
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", overflowX: "hidden" }}>
       <GiftRain />
       {/* ── Sección 1: Hero (Detalles del Kit Bienestar 74) ── */}
       <HeroSection />

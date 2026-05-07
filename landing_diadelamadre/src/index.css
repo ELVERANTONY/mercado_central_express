@@ -27,6 +27,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -34,6 +36,8 @@ body {
   background: #fff0f5;
   color: #2d1b3d;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 /* ─── Gradient Backgrounds ──────────────────────────────── */

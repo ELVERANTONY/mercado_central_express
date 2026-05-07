@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import { Heart, Sparkles, Shield, Snowflake, Calendar, Check } from "lucide-react";
+import { Heart, Sparkles, Shield, Snowflake, Check } from "lucide-react";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { FadeInUp, ScaleIn } from "../components/Animations";
-import { GiftBadge, BenefitItem, CheckItem } from "../components/UIKit";
+import { GiftBadge, BenefitItem } from "../components/UIKit";
 import { KITS } from "../constants/config";
 
 const kit = KITS.belleza;
 import imgMasajeador from "../assets/product_masajeador.png";
-import imgCajaParches from "../assets/product_caja_parches.png";
-import imgBienestarMom from "../assets/bienestar_mom.png";
+import imgParches from "../assets/product_caja_parches.png";
+import imgBellezaMom from "../assets/bienestar_mom.png";
 
 export default function KitBellezaSection() {
   return (
@@ -17,20 +17,6 @@ export default function KitBellezaSection() {
       className="bg-bienestar"
       style={{ padding: "48px 20px", position: "relative", overflow: "hidden" }}
     >
-      {/* Decorative blob */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: -60,
-          right: -60,
-          width: 240,
-          height: 240,
-          background: "radial-gradient(circle, rgba(168,85,247,0.14) 0%, transparent 70%)",
-          borderRadius: "50%",
-          pointerEvents: "none",
-        }}
-      />
-
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         {/* Header */}
         <FadeInUp>
@@ -116,15 +102,17 @@ export default function KitBellezaSection() {
           </p>
         </FadeInUp>
 
-        {/* Subtitle Card */}
+        {/* Hero Card */}
         <FadeInUp delay={0.15}>
           <div
             className="glass-card-dark"
-            style={{ padding: "22px 20px", marginTop: 20, position: "relative" }}
+            style={{
+              padding: "24px 20px",
+              marginTop: 20,
+              position: "relative",
+            }}
           >
-            <div
-              className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center text-center md:text-left"
-            >
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center text-center md:text-left">
               <div className="flex flex-col items-center md:items-start">
                 <p
                   className="text-center md:text-left"
@@ -136,9 +124,9 @@ export default function KitBellezaSection() {
                   }}
                 >
                   Porque ella merece el mejor cuidado,{" "}
-                  <strong>regálale belleza</strong> para que se{" "}
+                  <strong>regálale belleza</strong> para que se sienta{" "}
                   <span style={{ color: "#ec4899", fontWeight: 700 }}>
-                    sienta única y especial
+                    única y especial
                   </span>
                 </p>
 
@@ -152,6 +140,7 @@ export default function KitBellezaSection() {
                   ))}
                 </div>
               </div>
+
               <div className="flex justify-center md:min-w-[90px]">
                 <GiftBadge>
                   <p>¡PIEL</p>
@@ -163,115 +152,95 @@ export default function KitBellezaSection() {
           </div>
         </FadeInUp>
 
-        {/* Productos Clave Tag */}
+        {/* 3 PRODUCTOS Badge */}
         <FadeInUp delay={0.25}>
-          <div style={{ textAlign: "center", margin: "28px 0 16px" }}>
+          <div style={{ textAlign: "center", margin: "40px 0 20px" }}>
             <span
               style={{
                 background: "linear-gradient(90deg, #a855f7, #ec4899)",
                 color: "#fff",
-                fontWeight: 800,
-                fontSize: "0.85rem",
-                letterSpacing: "0.08em",
-                padding: "7px 20px",
+                fontWeight: 900,
+                fontSize: "1rem",
+                letterSpacing: "0.1em",
+                padding: "10px 28px",
                 borderRadius: 999,
                 display: "inline-flex",
                 alignItems: "center",
-                gap: 6,
+                gap: 8,
+                boxShadow: "0 10px 25px rgba(236,72,153,0.3)"
               }}
             >
-              PRODUCTOS CLAVE <Heart size={14} fill="white" />
+              PRODUCTOS CLAVE <Heart size={18} fill="white" />
             </span>
           </div>
         </FadeInUp>
 
-        {/* Product Cards — 2 columnas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-stretch mt-8">
+        {/* Product Cards — Matching KitBienestar style */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start mt-16 md:mt-24">
           {/* Masajeador */}
           <ScaleIn delay={0.3}>
             <motion.div
-              className="glass-card"
+              className="glass-card w-full"
               style={{ 
-                padding: "110px 16px 16px", 
+                padding: "140px 20px 24px", 
+                textAlign: "center", 
                 height: "100%", 
                 position: "relative",
                 overflow: "visible",
-                marginTop: 60,
+                marginTop: 80,
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center"
               }}
-              whileHover={{ y: -5, boxShadow: "0 20px 45px rgba(168,85,247,0.25)" }}
+              whileHover={{ y: -8, boxShadow: "0 25px 50px rgba(168,85,247,0.3)" }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="absolute -top-20 md:-top-24 left-0 right-0 flex justify-center pointer-events-none z-10">
-                <img 
+              <div className="absolute -top-24 md:-top-32 left-0 right-0 flex justify-center pointer-events-none z-10">
+                <motion.img 
                   src={imgMasajeador} 
                   alt="Masajeador de Rostro" 
-                  className="h-[180px] md:h-[220px] max-w-[140%] object-contain drop-shadow-2xl"
+                  className="h-[200px] md:h-[260px] w-auto object-contain drop-shadow-2xl"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                 />
               </div>
 
               <p
+                className="font-black"
                 style={{
                   color: "#ec4899",
-                  fontWeight: 800,
-                  fontSize: "clamp(0.7rem, 2.2vw, 0.85rem)",
+                  fontSize: "clamp(1.1rem, 3.2vw, 1.4rem)",
                   textTransform: "uppercase",
-                  lineHeight: 1.2,
-                  marginBottom: 8,
-                  textAlign: "center",
+                  lineHeight: 1.1,
+                  marginBottom: 12,
+                  letterSpacing: "-0.02em"
                 }}
               >
                 Masajeador de Rostro Recargable
               </p>
               <p
                 style={{
-                  fontSize: "clamp(0.75rem, 2.2vw, 0.85rem)",
+                  fontSize: "clamp(0.85rem, 2.2vw, 0.95rem)",
                   color: "#6b21a8",
-                  lineHeight: 1.4,
+                  lineHeight: 1.5,
                   marginBottom: 16,
-                  textAlign: "center",
                   fontWeight: 500
                 }}
               >
                 Alivia tensiones, mejora la circulación y reduce líneas finas. Diseño ergonómico y portátil.
               </p>
-
-              {/* Beneficios List */}
-              <div style={{ alignSelf: "stretch", marginBottom: 20 }}>
+              
+              <div style={{ alignSelf: "stretch", marginTop: "auto" }}>
                 {[
-                  { icon: <Sparkles size={14} />, text: "Rejuvenece tu piel" },
-                  { icon: <Heart size={14} />, text: "Efecto lifting natural" },
-                  { icon: <Check size={14} />, text: "Resultados profesionales" },
+                  { icon: <Sparkles size={16} />, text: "Rejuvenece tu piel" },
+                  { icon: <Heart size={16} />, text: "Efecto lifting natural" },
+                  { icon: <Check size={16} />, text: "Resultados profesionales" },
                 ].map((b, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
                     <div style={{ color: "#ec4899" }}>{b.icon}</div>
-                    <span style={{ fontSize: "0.72rem", color: "#4b5563", fontWeight: 500 }}>{b.text}</span>
+                    <span style={{ fontSize: "0.85rem", color: "#4b5563", fontWeight: 600 }}>{b.text}</span>
                   </div>
                 ))}
-              </div>
-              <div
-                style={{
-                  padding: "6px 10px",
-                  background: "rgba(168,85,247,0.08)",
-                  borderRadius: 10,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 6,
-                  marginTop: "auto",
-                }}
-              >
-                <Calendar size={14} color="#9333ea" />
-                <span
-                  style={{
-                    fontSize: "clamp(0.58rem, 1.6vw, 0.68rem)",
-                    color: "#9333ea",
-                    fontWeight: 600,
-                  }}
-                >
-                  Uso diario
-                </span>
               </div>
             </motion.div>
           </ScaleIn>
@@ -279,118 +248,89 @@ export default function KitBellezaSection() {
           {/* Parches */}
           <ScaleIn delay={0.4}>
             <motion.div
-              className="glass-card"
+              className="glass-card w-full"
               style={{ 
-                padding: "110px 16px 16px", 
+                padding: "140px 20px 24px", 
+                textAlign: "center", 
                 height: "100%", 
                 position: "relative",
                 overflow: "visible",
-                marginTop: 60,
+                marginTop: 80,
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center"
               }}
-              whileHover={{ y: -5, boxShadow: "0 20px 45px rgba(168,85,247,0.25)" }}
+              whileHover={{ y: -8, boxShadow: "0 25px 50px rgba(168,85,247,0.3)" }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="absolute -top-20 md:-top-24 left-0 right-0 flex justify-center pointer-events-none z-10">
-                <img 
+              <div className="absolute -top-24 md:-top-32 left-0 right-0 flex justify-center pointer-events-none z-10">
+                <motion.img 
                   src={imgParches} 
                   alt="Parches de Hidrogel" 
-                  className="h-[180px] md:h-[220px] max-w-[140%] object-contain drop-shadow-2xl"
+                  className="h-[200px] md:h-[260px] w-auto object-contain drop-shadow-2xl"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 />
               </div>
 
               <p
+                className="font-black"
                 style={{
                   color: "#ec4899",
-                  fontWeight: 800,
-                  fontSize: "clamp(0.7rem, 2.2vw, 0.85rem)",
+                  fontSize: "clamp(1.1rem, 3.2vw, 1.4rem)",
                   textTransform: "uppercase",
-                  lineHeight: 1.2,
-                  marginBottom: 8,
-                  textAlign: "center",
+                  lineHeight: 1.1,
+                  marginBottom: 12,
+                  letterSpacing: "-0.02em"
                 }}
               >
                 Parches de Hidrogel
               </p>
               <p
                 style={{
-                  fontSize: "clamp(0.75rem, 2.2vw, 0.85rem)",
+                  fontSize: "clamp(0.85rem, 2.2vw, 0.95rem)",
                   color: "#6b21a8",
-                  lineHeight: 1.4,
+                  lineHeight: 1.5,
                   marginBottom: 16,
-                  textAlign: "center",
                   fontWeight: 500
                 }}
               >
                 Hidrata intensamente, reduce ojeras y desinflama. Ideal para un momento de spa en casa.
               </p>
 
-              {/* Beneficios List */}
-              <div style={{ alignSelf: "stretch", marginBottom: 20 }}>
+              <div style={{ alignSelf: "stretch", marginTop: "auto", marginBottom: 16 }}>
                 {[
-                  { icon: <Sparkles size={14} />, text: "Hidratación profunda" },
-                  { icon: <Heart size={14} />, text: "Elimina signos de fatiga" },
-                  { icon: <Check size={14} />, text: "Colágeno concentrado" },
+                  { icon: <Sparkles size={16} />, text: "Hidratación profunda" },
+                  { icon: <Heart size={16} />, text: "Elimina signos de fatiga" },
+                  { icon: <Check size={16} />, text: "Colágeno concentrado" },
                 ].map((b, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
                     <div style={{ color: "#ec4899" }}>{b.icon}</div>
-                    <span style={{ fontSize: "0.72rem", color: "#4b5563", fontWeight: 500 }}>{b.text}</span>
+                    <span style={{ fontSize: "0.85rem", color: "#4b5563", fontWeight: 600 }}>{b.text}</span>
                   </div>
                 ))}
               </div>
 
-              {/* Unidades badge */}
               <div
                 style={{
-                  padding: "8px 10px",
-                  background: "linear-gradient(135deg, #ede9fe, #fce7f3)",
-                  borderRadius: 10,
-                  border: "1px solid rgba(168,85,247,0.2)",
-                  marginBottom: 8,
+                  padding: "10px 16px",
+                  background: "rgba(168,85,247,0.12)",
+                  borderRadius: 14,
+                  fontSize: "clamp(0.75rem, 2vw, 0.85rem)",
+                  color: "#7c3aed",
+                  fontWeight: 800,
                   width: "100%",
-                  textAlign: "center",
-                  marginTop: 6, // CLOSER
+                  border: "1px solid rgba(168,85,247,0.25)",
+                  textAlign: "center"
                 }}
               >
-                <p
-                  style={{
-                    fontSize: "clamp(0.6rem, 1.6vw, 0.7rem)",
-                    color: "#7c3aed",
-                    fontWeight: 700,
-                  }}
-                >
-                  Unidades: 12 Parches / 6 Pares
-                </p>
-              </div>
-
-              <div
-                style={{
-                  padding: "6px 10px",
-                  background: "rgba(168,85,247,0.08)",
-                  borderRadius: 10,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 6,
-                  marginTop: "auto",
-                }}
-              >
-                <Snowflake size={14} color="#9333ea" />
-                <span
-                  style={{
-                    fontSize: "clamp(0.58rem, 1.6vw, 0.68rem)",
-                    color: "#9333ea",
-                    fontWeight: 600,
-                  }}
-                >
-                  Efecto frescura
-                </span>
+                Unidades: 12 Parches / 6 Pares
               </div>
             </motion.div>
           </ScaleIn>
         </div>
 
+        {/* ── Final CTA ── */}
         <FadeInUp delay={0.55}>
           <div className="mt-16 md:mt-24 flex justify-center px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-32 items-center max-w-[680px] w-full">
@@ -398,7 +338,7 @@ export default function KitBellezaSection() {
               <div className="flex justify-center">
                 <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-[32px] p-6 border-2 border-purple-200/50 w-full max-w-[320px] relative shadow-xl">
                   <div className="relative mb-4 h-[240px] md:h-[280px]">
-                    <img src={imgBienestarMom} alt="Mamá feliz" className="w-full h-full object-contain absolute bottom-0 left-0 z-10 mix-blend-multiply" />
+                    <img src={imgBellezaMom} alt="Mamá feliz" className="w-full h-full object-contain absolute bottom-0 left-0 z-10 mix-blend-multiply" />
                   </div>
                   <p className="text-xs md:text-sm font-black text-purple-600 leading-tight uppercase tracking-wider text-center">
                     EL REGALO QUE ELLA MERECE ❤️

@@ -166,18 +166,18 @@ export default function HeroSection() {
           <div className="relative mt-8 md:mt-0 flex justify-center items-end min-h-[380px] md:min-h-[420px]">
             <ScaleIn delay={0.15}>
               <div className="relative inline-block w-full max-w-[280px] md:max-w-[340px]">
-                {/* Woman image (BACKGROUND LAYER) */}
+                {/* Woman image (FOREGROUND LAYER - ABOVE THE BOX) */}
                 <motion.img
                   src={heroImage}
                   alt="Mamá feliz"
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.7 }}
-                  className="w-[125%] md:w-[115%] h-auto block mx-auto relative z-10 -mt-20 md:-mt-32 mb-16 md:mb-20"
-                  style={{ mixBlendMode: "multiply" }}
+                  className="w-[125%] md:w-[115%] h-auto block mx-auto relative z-[100] -mt-72 md:-mt-140 mb-16 md:mb-20"
+                  style={{  }}
                 />
 
-                {/* Purple Box "El regalo que ella merece" (FOREGROUND LAYER) */}
+                {/* Purple Box "El regalo que ella merece" (BACKGROUND LAYER) */}
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
