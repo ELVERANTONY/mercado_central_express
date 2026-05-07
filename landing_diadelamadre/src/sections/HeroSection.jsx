@@ -146,7 +146,7 @@ export default function HeroSection() {
             </FadeInUp>
 
             {/* General Benefits for all Kits */}
-            <div className="mt-6 space-y-2 flex flex-col items-center md:items-start">
+            <div className="flex flex-col items-center md:items-start gap-3 w-full">
               {[
                 "Calidad premium en cada detalle",
                 "Sorpréndela con un regalo único",
@@ -156,6 +156,7 @@ export default function HeroSection() {
                   <BenefitItem
                     text={text}
                     icon={i === 0 ? Sparkles : i === 1 ? Heart : Star}
+                    center={true}
                   />
                 </FadeInUp>
               ))}
@@ -172,7 +173,7 @@ export default function HeroSection() {
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.7 }}
-                  className="w-[110%] h-auto block mx-auto relative z-10 -mt-10 md:-mt-20 mb-10 md:mb-14"
+                  className="w-[120%] md:w-[110%] h-auto block mx-auto relative z-10 -mt-12 md:-mt-20 mb-12 md:mb-14"
                   style={{ mixBlendMode: "multiply" }}
                 />
 
@@ -180,9 +181,9 @@ export default function HeroSection() {
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-full max-w-[240px] md:max-w-[280px] min-h-[90px] md:min-h-[110px] bg-gradient-to-br from-purple-600 to-purple-400 rounded-3xl shadow-2xl z-20 flex flex-col items-center justify-center p-3 border-2 border-white/30"
+                  className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[90%] md:w-full max-w-[280px] md:max-w-[300px] min-h-[100px] md:min-h-[120px] bg-gradient-to-br from-purple-600 to-purple-400 rounded-3xl shadow-2xl z-20 flex flex-col items-center justify-center p-4 border-2 border-white/30"
                 >
-                  <p className="text-white font-black text-sm md:text-lg leading-tight text-center uppercase">
+                  <p className="text-white font-black text-base md:text-lg leading-tight text-center uppercase tracking-wide">
                     ❤️ ¡EL REGALO QUE<br />ELLA MERECE! ❤️
                   </p>
                 </motion.div>

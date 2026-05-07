@@ -199,18 +199,18 @@ export default function KitBienestarSection() {
           </div>
         </FadeInUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 items-start mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start mt-12">
           {kit.productos.map((p, i) => (
             <ScaleIn key={i} delay={0.3 + i * 0.1}>
               <motion.div
                 className="glass-card"
                 style={{ 
-                  padding: "110px 12px 12px", // REDUCED BOTTOM PADDING
+                  padding: "130px 16px 20px", // INCREASED TOP PADDING
                   textAlign: "center", 
-                  height: "auto", // AUTO HEIGHT
+                  height: "auto", 
                   position: "relative",
                   overflow: "visible",
-                  marginTop: 60,
+                  marginTop: 80,
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center"
@@ -219,46 +219,49 @@ export default function KitBienestarSection() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 {/* Floating Product Image */}
-                <div className="absolute -top-16 md:-top-20 left-0 right-0 flex justify-center pointer-events-none z-10">
+                <div className="absolute -top-20 md:-top-24 left-0 right-0 flex justify-center pointer-events-none z-10">
                   <img 
                     src={productImages[i]} 
                     alt={p.nombre} 
-                    className="h-[140px] md:h-[180px] max-w-[130%] object-contain drop-shadow-xl"
+                    className="h-[180px] md:h-[220px] max-w-[140%] object-contain drop-shadow-2xl"
                   />
                 </div>
 
                 <p
+                  className="font-black"
                   style={{
                     color: "#ec4899",
-                    fontWeight: 800,
-                    fontSize: "clamp(0.65rem, 2vw, 0.78rem)",
+                    fontSize: "clamp(0.8rem, 2.5vw, 1rem)",
                     textTransform: "uppercase",
                     lineHeight: 1.2,
-                    marginBottom: 6,
+                    marginBottom: 8,
+                    letterSpacing: "0.05em"
                   }}
                 >
                   {p.nombre}
                 </p>
                 <p
                   style={{
-                    fontSize: "clamp(0.6rem, 1.8vw, 0.72rem)",
+                    fontSize: "clamp(0.75rem, 2.2vw, 0.85rem)",
                     color: "#6b21a8",
-                    lineHeight: 1.35,
-                    marginBottom: 10,
+                    lineHeight: 1.4,
+                    marginBottom: 12,
+                    fontWeight: 500
                   }}
                 >
                   {p.descripcion}
                 </p>
                 <div
                   style={{
-                    marginTop: 12, // CLOSER
-                    padding: "6px 8px",
-                    background: "rgba(168,85,247,0.08)",
-                    borderRadius: 8,
-                    fontSize: "clamp(0.55rem, 1.5vw, 0.65rem)",
-                    color: "#9333ea",
-                    fontWeight: 600,
-                    width: "100%"
+                    marginTop: "auto",
+                    padding: "8px 12px",
+                    background: "rgba(168,85,247,0.1)",
+                    borderRadius: 12,
+                    fontSize: "clamp(0.65rem, 2vw, 0.75rem)",
+                    color: "#7c3aed",
+                    fontWeight: 700,
+                    width: "100%",
+                    border: "1px solid rgba(168,85,247,0.2)"
                   }}
                 >
                   {p.extra}

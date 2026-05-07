@@ -204,11 +204,11 @@ export default function KitBellezaSection() {
               whileHover={{ y: -5, boxShadow: "0 20px 45px rgba(168,85,247,0.25)" }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="absolute -top-16 md:-top-20 left-0 right-0 flex justify-center pointer-events-none z-10">
+              <div className="absolute -top-20 md:-top-24 left-0 right-0 flex justify-center pointer-events-none z-10">
                 <img 
                   src={imgMasajeador} 
                   alt="Masajeador de Rostro" 
-                  className="h-[140px] md:h-[180px] max-w-[130%] object-contain drop-shadow-xl"
+                  className="h-[180px] md:h-[220px] max-w-[140%] object-contain drop-shadow-2xl"
                 />
               </div>
 
@@ -227,11 +227,12 @@ export default function KitBellezaSection() {
               </p>
               <p
                 style={{
-                  fontSize: "clamp(0.65rem, 2vw, 0.78rem)",
+                  fontSize: "clamp(0.75rem, 2.2vw, 0.85rem)",
                   color: "#6b21a8",
-                  lineHeight: 1.45,
+                  lineHeight: 1.4,
                   marginBottom: 16,
                   textAlign: "center",
+                  fontWeight: 500
                 }}
               >
                 Alivia tensiones, mejora la circulación y reduce líneas finas. Diseño ergonómico y portátil.
@@ -292,11 +293,11 @@ export default function KitBellezaSection() {
               whileHover={{ y: -5, boxShadow: "0 20px 45px rgba(168,85,247,0.25)" }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="absolute -top-16 md:-top-20 left-0 right-0 flex justify-center pointer-events-none z-10">
+              <div className="absolute -top-20 md:-top-24 left-0 right-0 flex justify-center pointer-events-none z-10">
                 <img 
-                  src={imgCajaParches} 
+                  src={imgParches} 
                   alt="Parches de Hidrogel" 
-                  className="h-[140px] md:h-[180px] max-w-[130%] object-contain drop-shadow-xl"
+                  className="h-[180px] md:h-[220px] max-w-[140%] object-contain drop-shadow-2xl"
                 />
               </div>
 
@@ -315,11 +316,12 @@ export default function KitBellezaSection() {
               </p>
               <p
                 style={{
-                  fontSize: "clamp(0.65rem, 2vw, 0.78rem)",
+                  fontSize: "clamp(0.75rem, 2.2vw, 0.85rem)",
                   color: "#6b21a8",
-                  lineHeight: 1.45,
+                  lineHeight: 1.4,
                   marginBottom: 16,
                   textAlign: "center",
+                  fontWeight: 500
                 }}
               >
                 Hidrata intensamente, reduce ojeras y desinflama. Ideal para un momento de spa en casa.

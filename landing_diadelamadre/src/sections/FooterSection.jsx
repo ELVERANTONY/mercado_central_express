@@ -43,7 +43,18 @@ export function StickyCTA() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="sticky-cta" style={{ padding: "0" }}>
+    <div 
+      className="sticky-cta w-full left-0 right-0" 
+      style={{ 
+        padding: "0",
+        background: "linear-gradient(90deg, #9333ea 0%, #ec4899 100%)",
+        minHeight: "75px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        boxShadow: "0 -4px 15px rgba(0,0,0,0.15)"
+      }}
+    >
       {/* Expandable panel */}
       <AnimatePresence>
         {expanded && (
@@ -55,12 +66,10 @@ export function StickyCTA() {
             style={{
               overflow: "hidden",
               background: "rgba(0,0,0,0.15)",
-              padding: "14px 16px",
+              padding: "16px",
             }}
           >
-            <div
-              className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 max-w-[600px] mx-auto"
-            >
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 max-w-[600px] mx-auto">
               {[
                 { kit: "bienestar", label: "Kit Bienestar", precio: "S/ 74" },
                 { kit: "belleza", label: "Kit Belleza", precio: "S/ 48" },
@@ -73,13 +82,13 @@ export function StickyCTA() {
                   rel="noopener noreferrer"
                   className="bg-white/10 hover:bg-white/20 transition-colors rounded-xl p-3 text-center no-underline border border-white/20 block"
                 >
-                  <p className="text-white font-extrabold text-[0.6rem] md:text-xs mb-1 uppercase tracking-wider">
+                  <p className="text-white font-extrabold text-[0.65rem] md:text-xs mb-1 uppercase tracking-wider">
                     {item.label}
                   </p>
                   <p className="text-amber-300 font-black text-lg md:text-xl leading-none">
                     {item.precio}
                   </p>
-                  <p className="text-white/60 text-[0.55rem] mt-2 font-bold">
+                  <p className="text-white/60 text-[0.55rem] mt-2 font-bold uppercase">
                     PEDIR →
                   </p>
                 </a>
@@ -89,52 +98,49 @@ export function StickyCTA() {
         )}
       </AnimatePresence>
 
-      <div
-        className="flex items-center justify-between px-4 py-4 md:py-5 gap-4"
-      >
+      <div className="w-full px-4 md:px-10 py-3 flex items-center justify-between gap-4">
         {/* Left: Offer tag */}
         <button
           onClick={() => setExpanded((e) => !e)}
-          className="flex items-center gap-2 bg-transparent border-none p-0 cursor-pointer outline-none"
+          className="flex items-center gap-2 bg-transparent border-none p-0 cursor-pointer outline-none shrink-0"
         >
-          <div className="bg-white/20 rounded-lg px-2 py-1 md:px-3 md:py-2 flex items-center gap-2">
-            <Gift size={14} className="text-amber-200" />
-            <span className="text-amber-200 font-black text-[0.7rem] md:text-sm tracking-tight uppercase">
+          <div className="bg-white/20 rounded-xl px-2.5 py-1.5 md:px-4 md:py-2.5 flex items-center gap-2 border border-white/30">
+            <Gift size={18} className="text-amber-200" />
+            <span className="text-amber-200 font-black text-[0.8rem] md:text-sm tracking-tight uppercase">
               ¡OFERTA!
             </span>
             <motion.div
               animate={{ rotate: expanded ? 180 : 0 }}
               transition={{ duration: 0.2 }}
             >
-              <ChevronUp size={16} className="text-white/70" />
+              <ChevronUp size={18} className="text-white/70" />
             </motion.div>
           </div>
         </button>
 
         {/* Center: countdown */}
-        <div className="flex items-center gap-3">
-          <Clock size={16} className="text-white/80 hidden sm:block" />
-          <div className="flex flex-col md:flex-row md:items-center gap-1">
-            <span className="text-white/90 text-[0.6rem] md:text-sm font-bold uppercase tracking-wider hidden md:block">
-              Vence:
+        <div className="flex items-center gap-2 md:gap-6 flex-grow justify-center">
+          <div className="flex flex-col md:flex-row md:items-center gap-1.5 md:gap-3 text-center">
+            <span className="text-white font-black text-[0.7rem] md:text-sm uppercase tracking-[0.1em] whitespace-nowrap">
+              VENCE: <span className="text-amber-200">Sáb. 9 de mayo - 12 PM</span>
             </span>
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center justify-center">
               {[pad(d), pad(h), pad(m), pad(s)].map((val, i) => (
-                <span key={i} className="flex items-center gap-1">
-                  <span className="bg-white/25 text-white font-black text-xs md:text-base px-1.5 py-1 rounded-md tabular-nums min-w-[24px] md:min-w-[32px] text-center shadow-inner">
+                <span key={i} className="flex items-center gap-1.5">
+                  <span className="bg-white/25 text-white font-black text-[0.85rem] md:text-lg px-2 py-1 rounded-lg tabular-nums min-w-[30px] md:min-w-[40px] text-center shadow-lg border border-white/10">
                     {val}
                   </span>
-                  {i < 3 && <span className="text-white/40 font-black text-xs">:</span>}
+                  {i < 3 && <span className="text-white/40 font-black text-sm md:text-base">:</span>}
                 </span>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Right: Decoration only (Hidden on mobile) */}
-        <div className="hidden lg:flex items-center gap-2 bg-white/20 text-white font-black text-xs px-4 py-2 rounded-full border border-white/40 uppercase tracking-widest">
-          <Heart size={14} fill="white" />
-          HAZLA FELIZ
+        {/* Right: Decoration only */}
+        <div className="flex items-center gap-2 bg-white/20 text-white font-black text-[0.7rem] md:text-xs px-3 py-2 md:px-5 md:py-3 rounded-full border border-white/40 uppercase tracking-[0.15em] shrink-0">
+          <Heart size={16} fill="white" className="hidden sm:block" />
+          <span className="whitespace-nowrap">HAZLA FELIZ</span>
         </div>
       </div>
     </div>

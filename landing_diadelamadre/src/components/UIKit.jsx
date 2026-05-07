@@ -78,17 +78,28 @@ export function GiftBadge({ children }) {
 /**
  * BenefitItem — ítem de beneficio con ícono circular
  */
-export function BenefitItem({ text, icon: Icon }) {
+export function BenefitItem({ text, icon: Icon, center = false }) {
   return (
-    <div style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 12 }}>
-      <div className="benefit-icon">
+    <div 
+      className={`flex items-start gap-4 mb-4 ${center ? 'justify-center text-center' : 'justify-start text-left'}`}
+      style={{ width: '100%' }}
+    >
+      <div className="benefit-icon shrink-0">
         {Icon ? (
-          <Icon size={16} color="#9333ea" strokeWidth={2.5} />
+          <Icon size={18} color="#9333ea" strokeWidth={2.5} />
         ) : (
-          <CheckCircle2 size={16} color="#9333ea" strokeWidth={2.5} />
+          <CheckCircle2 size={18} color="#9333ea" strokeWidth={2.5} />
         )}
       </div>
-      <p style={{ fontSize: "0.92rem", color: "#4b2d63", lineHeight: 1.5, fontWeight: 500 }}>
+      <p 
+        style={{ 
+          fontSize: "clamp(0.88rem, 2.8vw, 1.05rem)", 
+          color: "#4b2d63", 
+          lineHeight: 1.4, 
+          fontWeight: 600,
+          marginTop: 2
+        }}
+      >
         {text}
       </p>
     </div>

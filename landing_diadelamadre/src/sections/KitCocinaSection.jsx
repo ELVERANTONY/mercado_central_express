@@ -143,11 +143,11 @@ export default function KitCocinaSection() {
             <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center gap-20 md:gap-20 mt-20 md:mt-0">
               {/* Procesadora */}
               <div style={{ flex: "1 1 240px", minWidth: 200, display: "flex", flexDirection: "column" }}>
-                <div className="flex justify-center -mt-32 md:-mt-36 mb-4 z-10 relative">
+                <div className="flex justify-center -mt-32 md:-mt-40 mb-4 z-10 relative">
                   <img 
                     src={imgProcesadora} 
                     alt="Procesadora Eléctrica" 
-                    className="h-[200px] md:h-[250px] w-auto object-contain drop-shadow-2xl"
+                    className="h-[250px] md:h-[320px] w-auto object-contain drop-shadow-2xl"
                   />
                 </div>
 
@@ -164,11 +164,11 @@ export default function KitCocinaSection() {
                   ⭐ Procesadora Eléctrica
                 </p>
                 
-                <div style={{ display: "flex", flexDirection: "column", gap: 6, flex: 1 }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 8, flex: 1 }}>
                   {kit.procesadora.specs.map((s, i) => (
-                    <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 6 }}>
-                      <CheckCircle2 size={13} color="#a855f7" style={{ flexShrink: 0, marginTop: 2 }} />
-                      <span style={{ fontSize: "clamp(0.62rem, 1.8vw, 0.72rem)", color: "#4b2d63", lineHeight: 1.4 }}>
+                    <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
+                      <CheckCircle2 size={15} color="#a855f7" style={{ flexShrink: 0, marginTop: 2 }} />
+                      <span style={{ fontSize: "clamp(0.7rem, 2vw, 0.82rem)", color: "#4b2d63", lineHeight: 1.4, fontWeight: 500 }}>
                         {s}
                       </span>
                     </div>
@@ -183,11 +183,11 @@ export default function KitCocinaSection() {
 
               {/* Molino */}
               <div style={{ flex: "1 1 240px", minWidth: 200, display: "flex", flexDirection: "column" }}>
-                <div className="flex justify-center -mt-24 md:-mt-28 mb-4 z-10 relative">
+                <div className="flex justify-center -mt-28 md:-mt-36 mb-4 z-10 relative">
                   <img 
                     src={imgMolino} 
                     alt="Molino Granos Secos" 
-                    className="h-[160px] md:h-[200px] w-auto object-contain drop-shadow-2xl"
+                    className="h-[220px] md:h-[280px] w-auto object-contain drop-shadow-2xl"
                   />
                 </div>
 
