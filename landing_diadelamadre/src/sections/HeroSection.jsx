@@ -163,9 +163,9 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="relative mt-8 md:mt-0 flex justify-center items-end min-h-[340px] md:min-h-[380px]">
+          <div className="relative mt-8 md:mt-0 flex justify-center items-end min-h-[380px] md:min-h-[420px]">
             <ScaleIn delay={0.15}>
-              <div className="relative inline-block w-full max-w-[280px] md:max-w-[320px]">
+              <div className="relative inline-block w-full max-w-[280px] md:max-w-[340px]">
                 {/* Woman image (BACKGROUND LAYER) */}
                 <motion.img
                   src={heroImage}
@@ -173,7 +173,7 @@ export default function HeroSection() {
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.7 }}
-                  className="w-[120%] md:w-[110%] h-auto block mx-auto relative z-10 -mt-12 md:-mt-20 mb-12 md:mb-14"
+                  className="w-[125%] md:w-[115%] h-auto block mx-auto relative z-10 -mt-20 md:-mt-32 mb-16 md:mb-20"
                   style={{ mixBlendMode: "multiply" }}
                 />
 
@@ -181,9 +181,9 @@ export default function HeroSection() {
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[90%] md:w-full max-w-[280px] md:max-w-[300px] min-h-[100px] md:min-h-[120px] bg-gradient-to-br from-purple-600 to-purple-400 rounded-3xl shadow-2xl z-20 flex flex-col items-center justify-center p-4 border-2 border-white/30"
+                  className="absolute -bottom-4 md:-bottom-8 left-1/2 -translate-x-1/2 w-[95%] md:w-[105%] max-w-[300px] md:max-w-[340px] min-h-[110px] md:min-h-[130px] bg-gradient-to-br from-purple-600 to-purple-400 rounded-[2.5rem] shadow-2xl z-20 flex flex-col items-center justify-center p-4 border-2 border-white/30"
                 >
-                  <p className="text-white font-black text-base md:text-lg leading-tight text-center uppercase tracking-wide">
+                  <p className="text-white font-black text-lg md:text-xl leading-tight text-center uppercase tracking-wide">
                     ❤️ ¡EL REGALO QUE<br />ELLA MERECE! ❤️
                   </p>
                 </motion.div>

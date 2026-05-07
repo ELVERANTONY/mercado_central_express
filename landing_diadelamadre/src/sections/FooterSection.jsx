@@ -119,18 +119,18 @@ export function StickyCTA() {
         </button>
 
         {/* Center: countdown */}
-        <div className="flex items-center gap-2 md:gap-6 flex-grow justify-center">
-          <div className="flex flex-col md:flex-row md:items-center gap-1.5 md:gap-3 text-center">
-            <span className="text-white font-black text-[0.7rem] md:text-sm uppercase tracking-[0.1em] whitespace-nowrap">
-              VENCE: <span className="text-amber-200">Sáb. 9 de mayo - 12 PM</span>
+        <div className="flex items-center gap-2 md:gap-8 flex-grow justify-center">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-2 md:gap-4 text-center lg:text-left">
+            <span className="text-white font-extrabold text-[0.7rem] md:text-sm uppercase tracking-widest whitespace-nowrap opacity-90">
+              VENCE: <span className="text-white underline underline-offset-4 decoration-amber-300/50">Sáb. 9 de mayo - 12 PM</span>
             </span>
-            <div className="flex gap-2 items-center justify-center">
+            <div className="flex gap-1.5 md:gap-3 items-center justify-center">
               {[pad(d), pad(h), pad(m), pad(s)].map((val, i) => (
                 <span key={i} className="flex items-center gap-1.5">
-                  <span className="bg-white/25 text-white font-black text-[0.85rem] md:text-lg px-2 py-1 rounded-lg tabular-nums min-w-[30px] md:min-w-[40px] text-center shadow-lg border border-white/10">
+                  <span className="bg-[#ff4da6] text-white font-black text-[0.9rem] md:text-xl px-2.5 py-1.5 md:px-3.5 md:py-2 rounded-xl tabular-nums shadow-lg border border-white/20 min-w-[34px] md:min-w-[46px] text-center">
                     {val}
                   </span>
-                  {i < 3 && <span className="text-white/40 font-black text-sm md:text-base">:</span>}
+                  {i < 3 && <span className="text-white/40 font-black text-sm md:text-lg">:</span>}
                 </span>
               ))}
             </div>
