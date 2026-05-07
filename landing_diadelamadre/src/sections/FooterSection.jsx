@@ -59,13 +59,7 @@ export function StickyCTA() {
             }}
           >
             <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr 1fr",
-                gap: 8,
-                maxWidth: 500,
-                margin: "0 auto",
-              }}
+              className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 max-w-[600px] mx-auto"
             >
               {[
                 { kit: "bienestar", label: "Kit Bienestar", precio: "S/ 74" },
@@ -77,23 +71,15 @@ export function StickyCTA() {
                   href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(KITS[item.kit].whatsappMessage)}&type=phone_number&app_absent=0`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{
-                    background: "rgba(255,255,255,0.15)",
-                    borderRadius: 12,
-                    padding: "10px 8px",
-                    textAlign: "center",
-                    textDecoration: "none",
-                    border: "1px solid rgba(255,255,255,0.25)",
-                    display: "block",
-                  }}
+                  className="bg-white/10 hover:bg-white/20 transition-colors rounded-xl p-3 text-center no-underline border border-white/20 block"
                 >
-                  <p style={{ color: "#fff", fontWeight: 800, fontSize: "0.68rem", marginBottom: 2 }}>
+                  <p className="text-white font-extrabold text-[0.6rem] md:text-xs mb-1 uppercase tracking-wider">
                     {item.label}
                   </p>
-                  <p style={{ color: "#fde68a", fontWeight: 900, fontSize: "1.1rem", lineHeight: 1 }}>
+                  <p className="text-amber-300 font-black text-lg md:text-xl leading-none">
                     {item.precio}
                   </p>
-                  <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.6rem", marginTop: 4 }}>
+                  <p className="text-white/60 text-[0.55rem] mt-2 font-bold">
                     PEDIR →
                   </p>
                 </a>
@@ -103,103 +89,50 @@ export function StickyCTA() {
         )}
       </AnimatePresence>
 
-      {/* Main bar */}
       <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "20px 16px",
-          gap: 8,
-        }}
+        className="flex items-center justify-between px-4 py-4 md:py-5 gap-4"
       >
         {/* Left: Offer tag */}
         <button
           onClick={() => setExpanded((e) => !e)}
-          style={{
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            gap: 6,
-            padding: 0,
-          }}
+          className="flex items-center gap-2 bg-transparent border-none p-0 cursor-pointer outline-none"
         >
-          <div
-            style={{
-              background: "rgba(255,255,255,0.2)",
-              borderRadius: 8,
-              padding: "4px 8px",
-              display: "flex",
-              alignItems: "center",
-              gap: 4,
-            }}
-          >
-            <Gift size={14} color="#fde68a" />
-            <span style={{ color: "#fde68a", fontWeight: 800, fontSize: "0.85rem", whiteSpace: "nowrap" }}>
+          <div className="bg-white/20 rounded-lg px-2 py-1 md:px-3 md:py-2 flex items-center gap-2">
+            <Gift size={14} className="text-amber-200" />
+            <span className="text-amber-200 font-black text-[0.7rem] md:text-sm tracking-tight uppercase">
               ¡OFERTA!
             </span>
+            <motion.div
+              animate={{ rotate: expanded ? 180 : 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <ChevronUp size={16} className="text-white/70" />
+            </motion.div>
           </div>
-          <motion.div
-            animate={{ rotate: expanded ? 180 : 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            <ChevronUp size={18} color="rgba(255,255,255,0.8)" />
-          </motion.div>
         </button>
 
         {/* Center: countdown */}
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <Clock size={16} color="rgba(255,255,255,0.85)" />
-          <span style={{ color: "rgba(255,255,255,0.85)", fontSize: "0.8rem", fontWeight: 700, whiteSpace: "nowrap" }}>
-            Vence: Sáb. 9 de mayo - 12 PM
-          </span>
-          <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
-            {[pad(d), pad(h), pad(m), pad(s)].map((val, i) => (
-              <span key={i} style={{ display: "flex", alignItems: "center", gap: 2 }}>
-                <span
-                  style={{
-                    background: "rgba(255,255,255,0.25)",
-                    color: "#fff",
-                    fontWeight: 900,
-                    fontSize: "0.95rem",
-                    padding: "3px 6px",
-                    borderRadius: 6,
-                    fontVariantNumeric: "tabular-nums",
-                    minWidth: 28,
-                    textAlign: "center"
-                  }}
-                >
-                  {val}
-                </span>
-                {i < 3 && (
-                  <span style={{ color: "rgba(255,255,255,0.5)", fontWeight: 700, fontSize: "0.8rem" }}>
-                    :
+        <div className="flex items-center gap-3">
+          <Clock size={16} className="text-white/80 hidden sm:block" />
+          <div className="flex flex-col md:flex-row md:items-center gap-1">
+            <span className="text-white/90 text-[0.6rem] md:text-sm font-bold uppercase tracking-wider hidden md:block">
+              Vence:
+            </span>
+            <div className="flex gap-2 items-center">
+              {[pad(d), pad(h), pad(m), pad(s)].map((val, i) => (
+                <span key={i} className="flex items-center gap-1">
+                  <span className="bg-white/25 text-white font-black text-xs md:text-base px-1.5 py-1 rounded-md tabular-nums min-w-[24px] md:min-w-[32px] text-center shadow-inner">
+                    {val}
                   </span>
-                )}
-              </span>
-            ))}
+                  {i < 3 && <span className="text-white/40 font-black text-xs">:</span>}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Right: Decoration only */}
-        <div
-          style={{
-            background: "rgba(255,255,255,0.2)",
-            color: "#fff",
-            fontWeight: 800,
-            fontSize: "0.85rem",
-            padding: "8px 16px",
-            borderRadius: 999,
-            border: "1px solid rgba(255,255,255,0.4)",
-            whiteSpace: "nowrap",
-            display: "flex",
-            alignItems: "center",
-            gap: 6,
-            cursor: "default",
-          }}
-        >
+        {/* Right: Decoration only (Hidden on mobile) */}
+        <div className="hidden lg:flex items-center gap-2 bg-white/20 text-white font-black text-xs px-4 py-2 rounded-full border border-white/40 uppercase tracking-widest">
           <Heart size={14} fill="white" />
           HAZLA FELIZ
         </div>
@@ -216,7 +149,7 @@ export default function FooterSection() {
     <section
       className="bg-footer"
       style={{
-        padding: "40px 20px 24px",
+        padding: "40px 20px 100px", // Increased bottom padding for StickyCTA
         position: "relative",
         overflow: "hidden",
       }}

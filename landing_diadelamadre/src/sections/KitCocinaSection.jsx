@@ -140,35 +140,14 @@ export default function KitCocinaSection() {
             }}
           >
             {/* Products 1 + 1 */}
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "stretch",
-                justifyContent: "center",
-                gap: 20,
-              }}
-            >
+            <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center gap-20 md:gap-20 mt-20 md:mt-0">
               {/* Procesadora */}
               <div style={{ flex: "1 1 240px", minWidth: 200, display: "flex", flexDirection: "column" }}>
-                <div 
-                  style={{ 
-                    display: "flex", 
-                    justifyContent: "center",
-                    marginTop: -140,
-                    marginBottom: 10,
-                    zIndex: 10
-                  }}
-                >
+                <div className="flex justify-center -mt-32 md:-mt-36 mb-4 z-10 relative">
                   <img 
                     src={imgProcesadora} 
                     alt="Procesadora Eléctrica" 
-                    style={{ 
-                      height: "clamp(180px, 38vw, 250px)", 
-                      width: "auto",
-                      objectFit: "contain", 
-                      filter: "drop-shadow(0 15px 35px rgba(0,0,0,0.18))",
-                    }} 
+                    className="h-[200px] md:h-[250px] w-auto object-contain drop-shadow-2xl"
                   />
                 </div>
 
@@ -197,39 +176,18 @@ export default function KitCocinaSection() {
                 </div>
               </div>
 
-              {/* Plus - Hide on small mobile if it breaks? No, keep it small */}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
-                  alignSelf: "center"
-                }}
-              >
-                <div className="combo-plus" style={{ width: 35, height: 35, fontSize: "1.2rem", margin: "10px 0" }}>+</div>
+              {/* Plus */}
+              <div className="flex items-center justify-center shrink-0 my-4 md:my-0">
+                <div className="combo-plus w-10 h-10 text-xl flex items-center justify-center">+</div>
               </div>
 
               {/* Molino */}
               <div style={{ flex: "1 1 240px", minWidth: 200, display: "flex", flexDirection: "column" }}>
-                <div 
-                  style={{ 
-                    display: "flex", 
-                    justifyContent: "center",
-                    marginTop: -110,
-                    marginBottom: 10,
-                    zIndex: 10
-                  }}
-                >
+                <div className="flex justify-center -mt-24 md:-mt-28 mb-4 z-10 relative">
                   <img 
                     src={imgMolino} 
                     alt="Molino Granos Secos" 
-                    style={{ 
-                      height: "clamp(140px, 30vw, 200px)", 
-                      width: "auto",
-                      objectFit: "contain", 
-                      filter: "drop-shadow(0 15px 35px rgba(0,0,0,0.18))"
-                    }} 
+                    className="h-[160px] md:h-[200px] w-auto object-contain drop-shadow-2xl"
                   />
                 </div>
 
@@ -263,27 +221,14 @@ export default function KitCocinaSection() {
 
         {/* ── Usos Comparativa ── */}
         <FadeInUp delay={0.35}>
-          <div style={{ marginTop: 20 }}>
-            <div style={{ textAlign: "center", marginBottom: 14 }}>
-              <span
-                style={{
-                  background: "linear-gradient(90deg, #ec4899, #a855f7)",
-                  color: "#fff",
-                  fontWeight: 800,
-                  fontSize: "0.75rem",
-                  letterSpacing: "0.06em",
-                  padding: "6px 16px",
-                  borderRadius: 999,
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 6,
-                }}
-              >
+          <div className="mt-8 md:mt-10 px-2">
+            <div className="text-center mb-6">
+              <span className="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-extrabold text-[0.7rem] md:text-xs tracking-wider px-4 py-2 rounded-full inline-flex items-center gap-2">
                 <Heart size={12} fill="white" /> DOS ALIADOS INDISPENSABLES EN TU COCINA <Heart size={12} fill="white" />
               </span>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Procesadora usos */}
               <div className="glass-card" style={{ padding: "16px 14px" }}>
                 <p
@@ -375,14 +320,7 @@ export default function KitCocinaSection() {
 
         {/* ── Quality Badges ── */}
         <FadeInUp delay={0.45}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 10,
-              marginTop: 16,
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
             {kit.badges.map((b, i) => {
               const Icon = BADGE_ICONS[b.icono] || Shield;
               return (
@@ -415,35 +353,34 @@ export default function KitCocinaSection() {
           </div>
         </FadeInUp>
 
-        {/* ── Final CTA ── */}
         <FadeInUp delay={0.55}>
-          <div style={{ marginTop: 80, display: "flex", justifyContent: "center", padding: "0 20px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "center", maxWidth: 680, width: "100%" }}>
+          <div className="mt-16 md:mt-24 flex justify-center px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-32 items-center max-w-[680px] w-full">
               {/* Gift box + image */}
-              <div style={{ textAlign: "center", position: "relative" }}>
-                <div style={{ background: "linear-gradient(135deg, #fce7f3, #ede9fe)", borderRadius: 28, padding: "20px 16px", border: "2px solid rgba(168,85,247,0.25)", maxWidth: 320, width: "100%", position: "relative", boxShadow: "0 15px 35px rgba(124, 58, 237, 0.2)" }}>
-                  <div style={{ position: "relative", marginBottom: 10, height: 280 }}>
-                    <img src={imgMomCocina} alt="Mamá en la cocina" style={{ width: "100%", height: "100%", objectFit: "contain", position: "absolute", bottom: 0, left: 0, zIndex: 2, mixBlendMode: "multiply" }} />
+              <div className="flex justify-center">
+                <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-[32px] p-6 border-2 border-purple-200/50 w-full max-w-[320px] relative shadow-xl">
+                  <div className="relative mb-4 h-[240px] md:h-[280px]">
+                    <img src={imgMomCocina} alt="Mamá en la cocina" className="w-full h-full object-contain absolute bottom-0 left-0 z-10 mix-blend-multiply" />
                   </div>
-                  <p style={{ fontSize: "0.85rem", fontWeight: 900, color: "#7c3aed", lineHeight: 1.3, textTransform: "uppercase", marginTop: 4 }}>
+                  <p className="text-xs md:text-sm font-black text-purple-600 leading-tight uppercase tracking-wider text-center">
                     EL REGALO QUE ELLA MERECE ❤️
                   </p>
                 </div>
               </div>
 
               {/* Offer + CTA */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 14, maxWidth: 300 }}>
-                <div style={{ background: "linear-gradient(135deg, #fce7f3, #fff7ed)", borderRadius: 16, padding: "14px 18px", border: "1px solid rgba(245,158,11,0.25)" }}>
-                  <p style={{ color: "#6b21a8", fontWeight: 800, fontSize: "0.95rem", marginBottom: 2 }}>¡OFERTA LIMITADA!</p>
-                  <p style={{ color: "#4b2d63", fontSize: "0.8rem", lineHeight: 1.4 }}>Hazla feliz hoy, sorprenderla es fácil ❤️</p>
+              <div className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
+                <div className="bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl p-5 border border-orange-200/30 w-full max-w-[300px]">
+                  <p className="text-purple-900 font-extrabold text-lg mb-1">¡OFERTA LIMITADA!</p>
+                  <p className="text-purple-800 text-sm opacity-90">Hazla feliz hoy, sorprenderla es fácil ❤️</p>
                 </div>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "stretch" }}>
-                  <div className="price-badge-gold" style={{ padding: "12px 20px", minWidth: 120 }}>
-                    <p style={{ color: "#78350f", fontSize: "0.7rem", fontWeight: 700 }}>POR SOLO</p>
-                    <p style={{ color: "#1c0a00", fontSize: "2.4rem", fontWeight: 900, lineHeight: 1 }}>{kit.precio}</p>
+                <div className="flex flex-col gap-4 w-full max-w-[300px]">
+                  <div className="price-badge-gold py-4 px-6">
+                    <p className="text-amber-900 text-xs font-bold uppercase tracking-widest mb-1">POR SOLO</p>
+                    <p className="text-black text-5xl font-black leading-none">{kit.precio}</p>
                   </div>
-                  <WhatsAppButton message={kit.whatsappMessage} label="PEDIR AHORA" size="md" pulse />
+                  <WhatsAppButton message={kit.whatsappMessage} label="PEDIR AHORA" size="lg" pulse />
                 </div>
               </div>
             </div>

@@ -53,16 +53,12 @@ export default function HeroSection() {
           }}
         >
           <div
+            className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-14"
             style={{
               color: "#fff",
               fontWeight: 800,
               fontSize: "0.85rem",
               letterSpacing: "0.08em",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 14,
-              flexWrap: "wrap"
             }}
           >
             {/* Logo + Brand */}
@@ -77,8 +73,8 @@ export default function HeroSection() {
               </span>
             </div>
 
-            {/* Divider */}
-            <div style={{ width: 1, height: 16, background: "rgba(255,255,255,0.3)", margin: "0 4px" }} />
+            {/* Divider (Hidden on mobile) */}
+            <div className="hidden md:block" style={{ width: 1, height: 16, background: "rgba(255,255,255,0.3)", margin: "0 4px" }} />
 
             {/* Campaign Name */}
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -93,23 +89,19 @@ export default function HeroSection() {
       <div style={{ padding: "24px 20px 0" }}>
         {/* ── Hero Grid: Text + Image ── */}
         <div
+          className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-12"
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 12,
-            alignItems: "center",
             maxWidth: 900,
             margin: "0 auto",
           }}
         >
-          {/* LEFT: Title */}
-          <div>
+          <div className="text-center md:text-left">
             <FadeInUp delay={0.1}>
               <p
                 style={{
                   color: "#6b21a8",
                   fontWeight: 800,
-                  fontSize: "clamp(1.4rem, 5vw, 2.2rem)",
+                  fontSize: "clamp(1.8rem, 5vw, 2.2rem)",
                   lineHeight: 1.15,
                 }}
               >
@@ -126,7 +118,7 @@ export default function HeroSection() {
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
-                  fontSize: "clamp(2.2rem, 9vw, 4rem)",
+                  fontSize: "clamp(3rem, 9vw, 4rem)",
                   lineHeight: 1,
                   marginTop: -4,
                 }}
@@ -138,23 +130,23 @@ export default function HeroSection() {
               <p
                 style={{
                   color: "#4b2d63",
-                  fontSize: "clamp(0.78rem, 2.5vw, 0.92rem)",
+                  fontSize: "clamp(0.85rem, 2.5vw, 0.92rem)",
                   lineHeight: 1.5,
                   marginTop: 8,
                   fontWeight: 500,
                 }}
               >
                 Porque ella lo da todo,{" "}
-                <span style={{ fontWeight: 800 }}>regálale lo mejor</span> para
+                <span className="font-extrabold">regálale lo mejor</span> para
                 que se sienta{" "}
-                <span style={{ color: "#ec4899", fontWeight: 700 }}>
+                <span className="text-pink-500 font-bold">
                   única y especial
                 </span>
               </p>
             </FadeInUp>
 
             {/* General Benefits for all Kits */}
-            <div style={{ marginTop: 12 }}>
+            <div className="mt-6 space-y-2 flex flex-col items-center md:items-start">
               {[
                 "Calidad premium en cada detalle",
                 "Sorpréndela con un regalo único",
@@ -170,17 +162,9 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* RIGHT: Hero Image with Layered Effect */}
-          <div style={{ position: "relative", textAlign: "center", display: "flex", justifyContent: "center", alignItems: "flex-end", minHeight: 380 }}>
+          <div className="relative mt-8 md:mt-0 flex justify-center items-end min-h-[340px] md:min-h-[380px]">
             <ScaleIn delay={0.15}>
-              <div
-                style={{
-                  position: "relative",
-                  display: "inline-block",
-                  width: "100%",
-                  maxWidth: 320,
-                }}
-              >
+              <div className="relative inline-block w-full max-w-[280px] md:max-w-[320px]">
                 {/* Woman image (BACKGROUND LAYER) */}
                 <motion.img
                   src={heroImage}
@@ -188,58 +172,17 @@ export default function HeroSection() {
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.7 }}
-                  style={{
-                    width: "115%",
-                    height: "auto",
-                    display: "block",
-                    margin: "0 auto",
-                    position: "relative",
-                    zIndex: 1, // Behind the box
-                    marginTop: "-80px", // More UP
-                    marginBottom: "60px", // More space for box
-                    mixBlendMode: "multiply"
-                  }}
+                  className="w-[110%] h-auto block mx-auto relative z-10 -mt-10 md:-mt-20 mb-10 md:mb-14"
+                  style={{ mixBlendMode: "multiply" }}
                 />
 
                 {/* Purple Box "El regalo que ella merece" (FOREGROUND LAYER) */}
                 <motion.div
-                  animate={{
-                    y: [0, -8, 0],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  style={{
-                    position: "absolute",
-                    bottom: -15, // Lowered
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    width: "105%",
-                    maxWidth: 280,
-                    minHeight: 110,
-                    background: "linear-gradient(135deg, #9333ea, #c084fc)",
-                    borderRadius: 24,
-                    boxShadow: "0 15px 40px rgba(147, 51, 234, 0.45)",
-                    zIndex: 2, // In front to hide the cut
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: "12px",
-                    border: "2px solid rgba(255,255,255,0.3)",
-                    marginLeft: "-140px" // half of 280
-                  }}
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-full max-w-[240px] md:max-w-[280px] min-h-[90px] md:min-h-[110px] bg-gradient-to-br from-purple-600 to-purple-400 rounded-3xl shadow-2xl z-20 flex flex-col items-center justify-center p-3 border-2 border-white/30"
                 >
-                  <p style={{
-                    color: "#fff",
-                    fontWeight: 900,
-                    fontSize: "1.05rem",
-                    lineHeight: 1.2,
-                    textAlign: "center",
-                    textTransform: "uppercase"
-                  }}>
+                  <p className="text-white font-black text-sm md:text-lg leading-tight text-center uppercase">
                     ❤️ ¡EL REGALO QUE<br />ELLA MERECE! ❤️
                   </p>
                 </motion.div>

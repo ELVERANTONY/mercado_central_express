@@ -13,11 +13,11 @@ export const WHATSAPP_NUMBER = "51994220535";
 
 
 // Emojis generados dinámicamente con fromCodePoint para evitar corrupción de codificación
-const hola    = String.fromCodePoint(0x1f44b); // 👋
-const regalo  = String.fromCodePoint(0x1f381); // 🎁
+const hola = String.fromCodePoint(0x1f44b); // 👋
+const regalo = String.fromCodePoint(0x1f381); // 🎁
 const corazon = String.fromCodePoint(0x1f495); // 💕
-const morado  = String.fromCodePoint(0x1f49c); // 💜
-const sarten  = String.fromCodePoint(0x1f373); // 🍳
+const morado = String.fromCodePoint(0x1f49c); // 💜
+const sarten = String.fromCodePoint(0x1f373); // 🍳
 
 export const KITS = {
   bienestar: {
@@ -27,7 +27,7 @@ export const KITS = {
     precioNum: 74,
     // Texto PLANO — se encoda en WhatsAppButton.jsx
     whatsappMessage: [
-      `${hola} Hola! Quiero pedir el *Kit de Bienestar Mama*`,
+      `${hola} Hola! Quiero pedir el *Kit de Bienestar Mamá*`,
       `(Cepillo One Step + Mini Plancha + Parches Hidrogel)`,
       `por solo *S/ 74*. Esta disponible? ${regalo} ${corazon}`
     ].join("\n"),
@@ -64,7 +64,7 @@ export const KITS = {
     precio: "S/ 48",
     precioNum: 48,
     whatsappMessage: [
-      `${hola} Hola! Quiero pedir el *Kit de Belleza para Mama*`,
+      `${hola} Hola! Quiero pedir el *Kit de Belleza para Mamá*`,
       `(Masajeador Recargable + Parches Hidrogel 12 und)`,
       `por solo *S/ 48*. Esta disponible? ${regalo} ${morado}`
     ].join("\n"),
@@ -95,7 +95,7 @@ export const KITS = {
     precio: "S/ 120",
     precioNum: 120,
     whatsappMessage: [
-      `${hola} Hola! Quiero pedir el *Combo Cocina Mama*`,
+      `${hola} Hola! Quiero pedir el *Combo Cocina Mamá*`,
       `(Procesadora Electrica 1000W + Molino para Granos Secos)`,
       `por solo *S/ 120*. Esta disponible? ${regalo} ${sarten}`
     ].join("\n"),
@@ -122,9 +122,9 @@ export const KITS = {
       usos: ["Muele granos", "Cereales", "Especias secas"],
     },
     badges: [
-      { icono: "Shield",   texto: "Acero inoxidable de alta calidad" },
-      { icono: "Star",     texto: "Facil de limpiar y resistente" },
-      { icono: "Zap",      texto: "Potencia y rendimiento" },
+      { icono: "Shield", texto: "Acero inoxidable de alta calidad" },
+      { icono: "Star", texto: "Facil de limpiar y resistente" },
+      { icono: "Zap", texto: "Potencia y rendimiento" },
       { icono: "ThumbsUp", texto: "Practicos, rapidos y seguros" },
     ],
   },

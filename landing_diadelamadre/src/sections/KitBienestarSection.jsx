@@ -136,15 +136,11 @@ export default function KitBienestarSection() {
           >
             {/* Grid: Text + Gift Badge */}
             <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr auto",
-                gap: 16,
-                alignItems: "center",
-              }}
+              className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center text-center md:text-left"
             >
-              <div>
+              <div className="flex flex-col items-center md:items-start">
                 <p
+                  className="text-center md:text-left"
                   style={{
                     color: "#4b2d63",
                     fontSize: "clamp(0.85rem, 2.5vw, 1rem)",
@@ -159,16 +155,18 @@ export default function KitBienestarSection() {
                   </span>
                 </p>
 
-                {kit.beneficios.map((b, i) => (
-                  <BenefitItem
-                    key={i}
-                    text={b}
-                    icon={i === 0 ? Sparkles : i === 1 ? Heart : Shield}
-                  />
-                ))}
+                <div className="space-y-1">
+                  {kit.beneficios.map((b, i) => (
+                    <BenefitItem
+                      key={i}
+                      text={b}
+                      icon={i === 0 ? Sparkles : i === 1 ? Heart : Shield}
+                    />
+                  ))}
+                </div>
               </div>
 
-              <div style={{ minWidth: 90, alignSelf: "center" }}>
+              <div className="flex justify-center md:min-w-[90px]">
                 <GiftBadge>
                   <p>¡EL LOOK</p>
                   <p>QUE ELLA</p>
@@ -201,15 +199,7 @@ export default function KitBienestarSection() {
           </div>
         </FadeInUp>
 
-        {/* Product Cards */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 12,
-            alignItems: "start", // NATURAL HEIGHT
-          }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 items-start mt-8">
           {kit.productos.map((p, i) => (
             <ScaleIn key={i} delay={0.3 + i * 0.1}>
               <motion.div
@@ -229,27 +219,11 @@ export default function KitBienestarSection() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 {/* Floating Product Image */}
-                <div 
-                  style={{ 
-                    position: "absolute",
-                    top: -65,
-                    left: 0,
-                    right: 0,
-                    display: "flex", 
-                    justifyContent: "center",
-                    pointerEvents: "none",
-                    zIndex: 10
-                  }}
-                >
+                <div className="absolute -top-16 md:-top-20 left-0 right-0 flex justify-center pointer-events-none z-10">
                   <img 
                     src={productImages[i]} 
                     alt={p.nombre} 
-                    style={{ 
-                      height: "clamp(120px, 25vw, 180px)", 
-                      maxWidth: "130%", 
-                      objectFit: "contain", 
-                      filter: "drop-shadow(0 15px 30px rgba(0,0,0,0.12))"
-                    }} 
+                    className="h-[140px] md:h-[180px] max-w-[130%] object-contain drop-shadow-xl"
                   />
                 </div>
 
@@ -294,35 +268,35 @@ export default function KitBienestarSection() {
           ))}
         </div>
 
-        {/* ── Final CTA (COPIED FROM COCINA) ── */}
+        {/* ── Final CTA ── */}
         <FadeInUp delay={0.55}>
-          <div style={{ marginTop: 80, display: "flex", justifyContent: "center", padding: "0 20px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "center", maxWidth: 680, width: "100%" }}>
+          <div className="mt-16 md:mt-24 flex justify-center px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-32 items-center max-w-[680px] w-full">
               {/* Gift box + image */}
-              <div style={{ textAlign: "center", position: "relative" }}>
-                <div style={{ background: "linear-gradient(135deg, #fce7f3, #ede9fe)", borderRadius: 28, padding: "20px 16px", border: "2px solid rgba(168,85,247,0.25)", maxWidth: 320, width: "100%", position: "relative", boxShadow: "0 15px 35px rgba(124, 58, 237, 0.2)" }}>
-                  <div style={{ position: "relative", marginBottom: 10, height: 280 }}>
-                    <img src={imgCabelloMom} alt="Mamá feliz" style={{ width: "100%", height: "100%", objectFit: "contain", position: "absolute", bottom: 0, left: 0, zIndex: 2, mixBlendMode: "multiply" }} />
+              <div className="flex justify-center">
+                <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-[32px] p-6 border-2 border-purple-200/50 w-full max-w-[320px] relative shadow-xl">
+                  <div className="relative mb-4 h-[240px] md:h-[280px]">
+                    <img src={imgCabelloMom} alt="Mamá feliz" className="w-full h-full object-contain absolute bottom-0 left-0 z-10 mix-blend-multiply" />
                   </div>
-                  <p style={{ fontSize: "0.85rem", fontWeight: 900, color: "#7c3aed", lineHeight: 1.3, textTransform: "uppercase", marginTop: 4 }}>
+                  <p className="text-xs md:text-sm font-black text-purple-600 leading-tight uppercase tracking-wider text-center">
                     EL REGALO QUE ELLA MERECE ❤️
                   </p>
                 </div>
               </div>
 
               {/* Offer + CTA */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 14, maxWidth: 300 }}>
-                <div style={{ background: "linear-gradient(135deg, #fce7f3, #fff7ed)", borderRadius: 16, padding: "14px 18px", border: "1px solid rgba(245,158,11,0.25)" }}>
-                  <p style={{ color: "#6b21a8", fontWeight: 800, fontSize: "0.95rem", marginBottom: 2 }}>¡OFERTA LIMITADA!</p>
-                  <p style={{ color: "#4b2d63", fontSize: "0.8rem", lineHeight: 1.4 }}>Hazla feliz hoy, sorprenderla es fácil ❤️</p>
+              <div className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
+                <div className="bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl p-5 border border-orange-200/30 w-full max-w-[300px]">
+                  <p className="text-purple-900 font-extrabold text-lg mb-1">¡OFERTA LIMITADA!</p>
+                  <p className="text-purple-800 text-sm opacity-90">Hazla feliz hoy, sorprenderla es fácil ❤️</p>
                 </div>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "stretch" }}>
-                  <div className="price-badge-gold" style={{ padding: "12px 20px", minWidth: 120 }}>
-                    <p style={{ color: "#78350f", fontSize: "0.7rem", fontWeight: 700 }}>POR SOLO</p>
-                    <p style={{ color: "#1c0a00", fontSize: "2.4rem", fontWeight: 900, lineHeight: 1 }}>{kit.precio}</p>
+                <div className="flex flex-col gap-4 w-full max-w-[300px]">
+                  <div className="price-badge-gold py-4 px-6">
+                    <p className="text-amber-900 text-xs font-bold uppercase tracking-widest mb-1">POR SOLO</p>
+                    <p className="text-black text-5xl font-black leading-none">{kit.precio}</p>
                   </div>
-                  <WhatsAppButton message={kit.whatsappMessage} label="PEDIR AHORA" size="md" pulse />
+                  <WhatsAppButton message={kit.whatsappMessage} label="PEDIR AHORA" size="lg" pulse />
                 </div>
               </div>
             </div>
