@@ -65,7 +65,7 @@ export const KITS = {
     precioNum: 54,
     whatsappMessage: [
       `${hola} Hola! Quiero pedir el *Kit de Belleza para Mamá*`,
-      `(Masajeador Recargable + seis pares deParches Hidrogel (12 und))`,
+      `(Masajeador Recargable + seis pares de Parches Hidrogel (12 und))`,
       `por solo *S/ 54*. Esta disponible? ${regalo} ${morado}`
     ].join("\n"),
     productos: [
